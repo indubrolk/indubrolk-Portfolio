@@ -3,7 +3,7 @@ import { Sora } from "next/font/google";
 import "./globals.css";
 
 const font = Sora({
-    weight: ['100']
+    weight: ['100','200', '300', '400', '500', ]
 })
 
 export const metadata: Metadata = {
