@@ -3,11 +3,11 @@ import React from 'react';
 
 const HomePage = () => {
     return(
-        <div>
+        <div className="text-5xl">
             <Home />
         </div>
-    )
-}
+    );
+};
 
 
 
