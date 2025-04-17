@@ -1,6 +1,4 @@
-Certainly! Here's a `README.md` file tailored for your Next.js Portfolio project:
-
----
+read me upda
 
 # Next.js Portfolio
 
