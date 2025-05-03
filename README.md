@@ -2,6 +2,8 @@
 
 # Next.js Portfolio
 
+---
+
 A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project is designed to showcase your skills, projects, and professional experience in an elegant and efficient manner.
 
 ## ✨ Features
