@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {Sora} from "next/font/google";
-import "./globals.css";
+import { Tailwind } from "globals.css";
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
 
 const font = Sora ({

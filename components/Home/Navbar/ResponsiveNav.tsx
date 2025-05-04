@@ -9,7 +9,6 @@ const ResponsiveNav = () => {
         <Nav/>
         <MobileNav/>
 
-
     </div>
 );
 };
