@@ -14,7 +14,8 @@ const MobileNav = () => {
             {navLink.map((navLink) => {
                 return(
                     <Link key={navLink.id} href={navLink.url}>
-                        <p className="nav__link">{navLink.label}</p>
+                        <p className="nav__link text-[20px] ml-12 border-b-[1.5px] pb-2 border-white
+                        sm:text-[30px]">{navLink.label}</p>
                     </Link>
                 )
             })}
