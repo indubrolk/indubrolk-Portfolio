@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
 import {navLinks} from "@/constant/constant";
-
+import
 const Nav = () => {
     return(
         <div className="fixed h-[12vh] z-[10] bg-blue-950 w-full">
@@ -31,6 +31,10 @@ const Nav = () => {
                 hover:bg-gray-200 transition-all duration-200 rounded-lg">
                     Hire Me
                 </button>
+
+                {/* Burgur */}
+
+                <HiBars3BottomRight className="w-8 h-8 cursor-pointer text-white"/>
 
             </div>
         </div>
