@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 
 const MobileNav = () => {
     return <div>
@@ -12,7 +13,9 @@ const MobileNav = () => {
 
             {navLink.map((navLink) => {
                 return(
-                    <Link key={navLink.id} href={navLink.url}></Link>
+                    <Link key={navLink.id} href={navLink.url}>
+                        <p className="nav__link">{navLink.label}</p>
+                    </Link>
                 )
             })}
 
