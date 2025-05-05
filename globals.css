@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .nav__link {
+        @apply relative text-base font-medium w-fit block after:block after:content-[''] after:absolute after:h-[3px]
+        sfter:bg-yellow-400 text-white after:w-full after:scale-x-0 after:hover:scale
+    }
+}
+

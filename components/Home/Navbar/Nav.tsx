@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from 'react';
+import {navLinks} from "@/constant/constant";
 
 const Nav = () => {
     return(
@@ -12,7 +14,16 @@ const Nav = () => {
                    height={170}
                    className="ml-[-1.5rem] sm:ml-0"
 
-            ></Image>
+            />
+
+            <div className="flex items-center space-x-10">
+                {navLinks.map((navLink) => {
+                    return <Link key={navLink.id} href={navLink.url}>
+                        <p className="nav__link">{navLink.label}</p>
+                    </Link>
+                })}
+
+            </div>
         </div>
         </div>
 )
