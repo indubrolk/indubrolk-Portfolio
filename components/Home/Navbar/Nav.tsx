@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
 import {navLinks} from "@/constant/constant";
-import
+import { HiBars3BottomRight } from "react-icons/hi2";
+
 const Nav = () => {
     return(
         <div className="fixed h-[12vh] z-[10] bg-blue-950 w-full">
