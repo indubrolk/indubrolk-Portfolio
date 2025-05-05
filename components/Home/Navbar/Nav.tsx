@@ -24,6 +24,11 @@ const Nav = () => {
                 })}
 
             </div>
+            {/* Buttons */}
+
+            <div className="">
+
+            </div>
         </div>
         </div>
 )
