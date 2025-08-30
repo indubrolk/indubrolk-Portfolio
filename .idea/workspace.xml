@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/my-app/src/app/blogs/page.tsx" afterDir="false" />
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="page updated">
+      <change afterPath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/app/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +104,8 @@
       <workItem from="1756396950257" duration="1995000" />
       <workItem from="1756399540340" duration="3426000" />
       <workItem from="1756442112930" duration="2803000" />
-      <workItem from="1756455026971" duration="6978000" />
+      <workItem from="1756455026971" duration="7043000" />
+      <workItem from="1756549704194" duration="1419000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -132,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756487569016</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="page updated">
+      <option name="closed" value="true" />
+      <created>1756491695622</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756491695622</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +147,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="page updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="page updated" />
   </component>
 </project>
