@@ -4,9 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="css updated">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" afterDir="false" />
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="navbar updated">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/eslint.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/next.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/postcss.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/globe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/window.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/about/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/blogs/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/contact/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/projects/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/tsconfig.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +74,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/NextJs - Portfolio/my-app/src/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -69,6 +94,9 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\NextJs - Portfolio\my-app\src\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\app" />
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\app\projects" />
@@ -109,7 +137,11 @@
       <workItem from="1756455026971" duration="7043000" />
       <workItem from="1756549704194" duration="7889000" />
       <workItem from="1756622032676" duration="2977000" />
-      <workItem from="1756639695178" duration="366000" />
+      <workItem from="1756639695178" duration="429000" />
+      <workItem from="1756640873874" duration="9000" />
+      <workItem from="1756641273057" duration="4898000" />
+      <workItem from="1756663409115" duration="4573000" />
+      <workItem from="1756668067950" duration="330000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -165,11 +197,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="page updated" />
-    <MESSAGE value="navbar updated" />
     <MESSAGE value="css updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="css updated" />
+    <MESSAGE value="navbar updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="navbar updated" />
   </component>
 </project>
