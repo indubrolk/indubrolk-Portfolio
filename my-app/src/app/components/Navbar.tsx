@@ -31,7 +31,7 @@ const Navbar = () => {
                         <Image
                             src="/images/logo1.png"
                             alt="logo"
-                            width={32}
+                            width={100}
                             height={32}
                             className="object-contain"
                             priority
