@@ -29,10 +29,10 @@ const Navbar = () => {
 
                     {/* desktop menus */}
 
-                    <div>
+                    <div className='hidden md:flex items-center space-x-8'>
                         {
                             menuItems.map((item) => (
-                                <Link key={item.href} href={item.href}>{item.label}</Link>
+                                <Link key={item.href} href={item.href} className='hover:text-primary transition-colors'>{item.label}</Link>
                     ))
                         }
                     </div>
