@@ -29,7 +29,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link href="/" className="text-xl font-bold text-primary">
                         <Image
-                            src="/images/logo1.png"
+                            src="images/logo1.png"
                             alt="logo"
                             width={100}
                             height={32}
