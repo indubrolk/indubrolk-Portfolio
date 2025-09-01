@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="navbar updated" />
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="navbar updated">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/images/logo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/public/images/logo1.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +76,7 @@
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\NextJs - Portfolio\my-app\public" />
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\app" />
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\app\projects" />
     </key>
@@ -116,7 +122,7 @@
       <workItem from="1756663409115" duration="4573000" />
       <workItem from="1756668067950" duration="428000" />
       <workItem from="1756701066535" duration="4826000" />
-      <workItem from="1756746903866" duration="1556000" />
+      <workItem from="1756746903866" duration="2382000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -182,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756750319106</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="navbar updated">
+      <option name="closed" value="true" />
+      <created>1756751046365</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756751046365</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
