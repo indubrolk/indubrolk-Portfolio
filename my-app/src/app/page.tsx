@@ -1,6 +1,6 @@
 
 export default function Home() {
     return (
-      <div>Hi</div>
+      <div className='text-black'>Home Page</div>
     );
 }

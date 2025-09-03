@@ -1,12 +1,14 @@
 "use client"
 
 import React, { useState } from 'react'
+import {SunIcon} from '@heroicons/react/24/solid';
 import Link from "next/link";
 import Image from "next/image"
 // import logoImage from '../images/logo1.png';
 import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+    const theme = "dark"
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const pathname = usePathname();
 
@@ -23,11 +25,11 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className='fixed w-full bg-dark/80 dark:bg-dark/80 backdrop-blur-sm z-50'>
+        <nav className='fixed w-full bg-dark/100 dark:bg-dark/50 backdrop-blur-sm z-50'>
             <div className='container max-w-7xl mx-auto px-4'>
                 <div className='flex items-center justify-between h-16'>
                     {/* Logo */}
-                    <Link href="/" className="text-xl font-bold text-primary">
+                    <Link href="/" className="text-xl font-bold">
                         <Image
                             src="/images/logo1.png"
                             alt="logo"
@@ -50,14 +52,22 @@ const Navbar = () => {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`hover:text-primary transition-colors no-underline ${
-                                        isActive ? 'text-primary' : ''
+                                    className={` text-white hover:text-primary transition-colors no-underline ${
+                                        isActive ? 'text-hover' : ''
                                     }`}
                                 >
                                     {item.label}
                                 </Link>
                             )
                         })}
+
+                        <button>
+                            {
+                                theme === "dark" ? (
+                                    <SunIcon className='w-6 h-6 text-primary'></SunIcon>
+                                )
+                            }
+                        </button>
                     </div>
 
                     {/* Mobile menu button */}
