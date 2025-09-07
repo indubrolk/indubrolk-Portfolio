@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
-import {SunIcon} from '@heroicons/react/24/solid';
+import {MoonIcon,SunIcon} from '@heroicons/react/24/solid';
 import Link from "next/link";
 import Image from "next/image"
 // import logoImage from '../images/logo1.png';
@@ -61,30 +61,22 @@ const Navbar = () => {
                             )
                         })}
 
-                        <button>
-                            {
-                                theme === "dark" ? (
-                                    <SunIcon className='w-6 h-6 text-primary'></SunIcon>
-                                )
+                        <button className='p-2 rounded-lg hover:bg-gray-100 text-primary dark:hover:bg-gray-800 transition-colors cursor-pointer'>
+                            {theme === "dark" ?(
+                                <SunIcon className='w-5 h-5'/>
+                            ) : (
+                                <MoonIcon className='w-5 h-5'/>
+                            )
                             }
                         </button>
+
                     </div>
 
                     {/* Mobile menu button */}
                     <button
-                        onClick={toggleMobileMenu}
-                        className='md:hidden flex flex-col justify-center items-center w-6 h-6'
-                        aria-label="Toggle mobile menu"
-                    >
-                        <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                            isMobileMenuOpen ? 'rotate-45 translate-y-1' : ''
-                        }`} />
-                        <span className={`block w-5 h-0.5 bg-current transition-all duration-300 my-1 ${
-                            isMobileMenuOpen ? 'opacity-0' : ''
-                        }`} />
-                        <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                            isMobileMenuOpen ? '-rotate-45 -translate-y-1' : ''
-                        }`} />
+                        {
+                        isMobileMenuOpen ? (<XMarkIcon)
+                        }
                     </button>
                 </div>
 
