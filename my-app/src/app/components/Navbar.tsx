@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
-import {MoonIcon,SunIcon} from '@heroicons/react/24/solid';
+import {MoonIcon,SunIcon,Bars3Icon,XMarkIcon} from '@heroicons/react/24/solid';
 import Link from "next/link";
 import Image from "next/image"
 // import logoImage from '../images/logo1.png';
@@ -12,7 +12,7 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const pathname = usePathname();
 
-    const toggleMobileMenu = () => {
+    const  toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     }
 
@@ -72,13 +72,15 @@ const Navbar = () => {
 
                     </div>
 
-                    {/* Mobile menu button */}
-                    <button
-                        {
-                        isMobileMenuOpen ? (<XMarkIcon)
-                        }
-                    </button>
+
                 </div>
+
+                {/* Mobile menu button */}
+                <button onClick={toggleMobileMenu} className='md-hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer'>
+                    {
+                        isMobileMenuOpen ? (<XMarkIcon className='w-6 h-6'/>) : (<Bars3Icon className='w-6 h-6'/>)
+                    }
+                </button>
 
                 {/* Mobile menu */}
                 {isMobileMenuOpen && (
@@ -100,8 +102,12 @@ const Navbar = () => {
                                 )
                             })}
                         </div>
+
+
                     </div>
                 )}
+
+
             </div>
         </nav>
     )
