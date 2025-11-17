@@ -47,8 +47,8 @@ body {
   min-height: 100vh;
   background-color: #05070f;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(87, 175, 255, 0.25), transparent 25%),
-    radial-gradient(circle at 80% 0%, rgba(255, 132, 235, 0.18), transparent 28%),
+    radial-gradient(circle at 20% 20%, rgb(0, 7, 58), transparent 25%),
+    radial-gradient(circle at 80% 0%, rgba(138, 54, 0, 0.68), transparent 28%),
     radial-gradient(circle at 50% 65%, rgba(99, 102, 241, 0.18), transparent 30%),
     linear-gradient(135deg, #05070f 0%, #0a1224 40%, #0b1020 100%);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;

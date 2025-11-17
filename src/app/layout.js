@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import ColorBends from "../components/ColorBends";
+import AppShell from "../components/AppShell";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,12 +23,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > 
-        <div className="relative min-h-screen">
-          
-          
-        <div className="relative z-10">{children}</div>
-        </div>
-        
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

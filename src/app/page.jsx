@@ -2,6 +2,7 @@
 import { FileText, FolderGit2, Home, Mail, User,PlayCircle } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
+import { WordRotate } from "@/components/ui/word-rotate";
 
 
 const menuIcons = [
@@ -113,17 +114,26 @@ export default function HomePage() {
           <DesktopWindow className="lg:col-span-2">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-2" id="home">
-                <p className="text-xs font-medium uppercase tracking-[0.35em] text-slate-300">
+                <p className="text-xl font-mono uppercase tracking-[0.35em] text-slate-300">
                   Hi, I&apos;m
                 </p>
                 <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                  <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-fuchsia-400 bg-clip-text text-transparent">
+                  {/* <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-fuchsia-400 bg-clip-text text-transparent">
                     Induwara Jayakody
-                  </span>
+                  </span>{" "} */}
+                  <WordRotate
+                    className="bg-gradient-to-r from-orange-100 via-orange-300 to-orange-600 bg-clip-text text-transparent"
+                    words={[
+                      "Induwara Jayakody",
+                      "indu brolk",
+                      "Youtuber",
+                      "Technology Enthusiast",
+                      "FullStack Developer",
+                    ]}
+                  />
                 </h1>
                 <p className="max-w-2xl text-sm text-slate-200 sm:text-base">
-                  Product-minded developer crafting polished, modern experiences on the web.
-                  I love pairing crisp UI with practical engineering to ship things people enjoy using.
+                    Hello! I’m Chamod Induwara, a passionate tech enthusiast, YouTuber, Tech Article Writer and IT undergraduate at the Sabaragamuwa University of Sri Lanka. I enjoy exploring the latest in technology and sharing insights through my YouTube channel and engaging tech articles. Whether it's diving into software, gadgets, or creative tech solutions, I’m dedicated to making tech accessible and enjoyable for everyone. Join me on my journey as I explore, learn, and share everything tech from the heart of Sri Lanka!
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {["Next.js", "React", "Tailwind", "UI/UX", "Electronics"].map((chip) => (
