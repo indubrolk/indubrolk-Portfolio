@@ -3,6 +3,7 @@ import { FileText, FolderGit2, Home, Mail, User,PlayCircle } from "lucide-react"
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
 
+
 const menuIcons = [
   { label: "Home", href: "#home", icon: Home },
   { label: "Projects", href: "#projects", icon: FolderGit2 },
@@ -90,6 +91,7 @@ export default function HomePage() {
       </nav>
 
       <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-24 pb-32">
+        
         {/* <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {desktopIcons.map((item) => (
             <a
@@ -135,7 +137,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative mx-auto h-40 w-40 shrink-0 overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 via-white/5 to-white/0 shadow-[0_18px_40px_-20px_rgba(0,0,0,0.65)]">
+              <div className="relative mx-auto h-40 w-40 shrink-0 overflow-hidden rounded-full border border-black/15 bg-gradient-to-br from-white/10 via-white/5 to-white/0 shadow-[0_18px_40px_-20px_rgba(0,0,0,0.65)]">
                 <Image
                   src="/profile pic.jpeg"
                   alt="Induwara Jayakody"
