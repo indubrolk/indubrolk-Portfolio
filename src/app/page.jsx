@@ -1,5 +1,5 @@
 ﻿import Image from "next/image";
-import { FileText, FolderGit2, Home, Mail, User } from "lucide-react";
+import { FileText, FolderGit2, Home, Mail, User,PlayCircle } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
 
@@ -8,6 +8,7 @@ const menuIcons = [
   { label: "Projects", href: "#projects", icon: FolderGit2 },
   { label: "About", href: "#about", icon: User },
   { label: "Contact", href: "#contact", icon: Mail },
+  { label: "Content", href: "/content", icon: PlayCircle },
 ];
 
 const desktopIcons = [
@@ -73,23 +74,23 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-black/50" />
       </div>
 
-      <nav className="fixed inset-x-0 top-0 z-20 mx-auto flex max-w-4xl items-center justify-center gap-3 px-4 pt-4">
-        <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-2 backdrop-blur-xl">
+      <nav className="fixed inset-x-0 top-0 z-20 mx-auto flex max-w-5xl items-center justify-center gap-4 px-6 pt-6">
+        <div className="flex items-center gap-3 rounded-full border border-white/20 bg-white/12 px-5 py-3 backdrop-blur-xl shadow-lg shadow-black/20">
           {menuIcons.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-white/80 transition hover:-translate-y-0.5 hover:bg-white/20 hover:text-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold text-white/80 transition hover:-translate-y-0.5 hover:bg-white/20 hover:text-white"
               aria-label={item.label}
             >
-              <item.icon className="h-5 w-5" />
+              <item.icon className="h-6 w-6" />
             </a>
           ))}
         </div>
       </nav>
 
       <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-24 pb-32">
-        <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {/* <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {desktopIcons.map((item) => (
             <a
               key={item.label}
@@ -104,7 +105,7 @@ export default function HomePage() {
               </span>
             </a>
           ))}
-        </section>
+        </section> */}
 
         <div className="grid gap-5 lg:grid-cols-3">
           <DesktopWindow className="lg:col-span-2">
@@ -266,4 +267,3 @@ export default function HomePage() {
     </div>
   );
 }
-
