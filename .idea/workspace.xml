@@ -6,7 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="navbar updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/eslint.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/next.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/postcss.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/globe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/images/logo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/window.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/about/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/blogs/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/contact/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/app/projects/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/tsconfig.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,31 +61,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/Projects/NextJs - Portfolio/my-app/src/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "D:\\Projects\\NextJs - Portfolio\\my-app\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/NextJs - Portfolio/my-app/src/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\NextJs - Portfolio\\my-app\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -129,7 +150,10 @@
       <workItem from="1756919556755" duration="6250000" />
       <workItem from="1757220782477" duration="5391000" />
       <workItem from="1757229234645" duration="8000" />
-      <workItem from="1762454885589" duration="4515000" />
+      <workItem from="1762454885589" duration="4657000" />
+      <workItem from="1762754053452" duration="18000" />
+      <workItem from="1763351730421" duration="327000" />
+      <workItem from="1763372960654" duration="343000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -227,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757225713170</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="navbar updated">
+      <option name="closed" value="true" />
+      <created>1762459485987</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1762459485987</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,5 +282,13 @@
     <MESSAGE value="css updated" />
     <MESSAGE value="navbar updated" />
     <option name="LAST_COMMIT_MESSAGE" value="navbar updated" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
