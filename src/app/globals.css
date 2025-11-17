@@ -1,0 +1,53 @@
+﻿@import "tailwindcss";
+
+:root {
+  --background: #05070f;
+  --foreground: #e9f0ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #05070f;
+    --foreground: #e9f0ff;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background-color: #05070f;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(87, 175, 255, 0.25), transparent 25%),
+    radial-gradient(circle at 80% 0%, rgba(255, 132, 235, 0.18), transparent 28%),
+    radial-gradient(circle at 50% 65%, rgba(99, 102, 241, 0.18), transparent 30%),
+    linear-gradient(135deg, #05070f 0%, #0a1224 40%, #0b1020 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: #fff;
+}
+
+.desktops-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 160px 160px, 160px 160px;
+  mask-image: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.25), transparent 65%);
+}

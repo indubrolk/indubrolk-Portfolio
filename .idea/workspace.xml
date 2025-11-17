@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="navbar updated">
+      <change afterPath="$PROJECT_DIR$/src/components/ProjectCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Section.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -133,7 +135,8 @@
       <workItem from="1762754053452" duration="18000" />
       <workItem from="1763351730421" duration="327000" />
       <workItem from="1763372960654" duration="664000" />
-      <workItem from="1763373655712" duration="411000" />
+      <workItem from="1763373655712" duration="1285000" />
+      <workItem from="1763376660073" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -247,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763373550651</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="navbar updated">
+      <option name="closed" value="true" />
+      <created>1763374094752</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1763374094752</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
