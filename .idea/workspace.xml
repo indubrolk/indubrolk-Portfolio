@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="ui updated">
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="page.jsx updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +140,9 @@
       <workItem from="1763394313950" duration="125000" />
       <workItem from="1763396067070" duration="10000" />
       <workItem from="1763396103439" duration="1723000" />
+      <workItem from="1763397898174" duration="154000" />
+      <workItem from="1763399295917" duration="12000" />
+      <workItem from="1763402238662" duration="132000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -275,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763378465788</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="page.jsx updated">
+      <option name="closed" value="true" />
+      <created>1763397930763</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763397930763</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +303,8 @@
     <MESSAGE value="css updated" />
     <MESSAGE value="navbar updated" />
     <MESSAGE value="ui updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui updated" />
+    <MESSAGE value="page.jsx updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="page.jsx updated" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
