@@ -6,29 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="navbar updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/eslint.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/next.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/postcss.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/images/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/about/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/blogs/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/components/Navbar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/contact/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/app/projects/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +77,7 @@
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\NextJs - Portfolio" />
       <recent name="D:\Projects\NextJs - Portfolio\my-app\public" />
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\app" />
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\app\projects" />
@@ -153,7 +132,8 @@
       <workItem from="1762454885589" duration="4657000" />
       <workItem from="1762754053452" duration="18000" />
       <workItem from="1763351730421" duration="327000" />
-      <workItem from="1763372960654" duration="343000" />
+      <workItem from="1763372960654" duration="664000" />
+      <workItem from="1763373655712" duration="411000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -259,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762459485987</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="navbar updated">
+      <option name="closed" value="true" />
+      <created>1763373550651</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1763373550651</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
