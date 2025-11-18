@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon } from "lucide-react";
+import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
 import { WordRotate } from "@/components/ui/word-rotate";
