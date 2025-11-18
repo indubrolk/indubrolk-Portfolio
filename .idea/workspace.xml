@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="page.jsx updated">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="Caption added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,6 +141,7 @@
       <workItem from="1763397898174" duration="154000" />
       <workItem from="1763399295917" duration="12000" />
       <workItem from="1763402238662" duration="132000" />
+      <workItem from="1763410086986" duration="161000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -280,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763397930763</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Caption added">
+      <option name="closed" value="true" />
+      <created>1763410110051</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1763410110051</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +311,8 @@
     <MESSAGE value="navbar updated" />
     <MESSAGE value="ui updated" />
     <MESSAGE value="page.jsx updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="page.jsx updated" />
+    <MESSAGE value="Caption added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Caption added" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
