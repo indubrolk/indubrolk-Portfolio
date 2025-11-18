@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# indu brolk Desktop Portfolio
+
+A desktop-inspired portfolio built with Next.js 16 and Tailwind CSS 4. The experience mimics an OS desktop with a dock, draggable windows, and animated sections to highlight projects, skills, and contact links.
+
+## Features
+
+- OS-style layout with a dock, desktop icons, and windowed panels for sections
+- Hero section with rotating headline copy and quick navigation to About, Projects, and Contact
+- Project cards with tech stack tags and outbound links
+- Gallery grid for visual work streams (UI, branding, maker, and media)
+- Contact shortcuts for email and social profiles
+- Fully responsive styling with Tailwind CSS and Radix-inspired UI pieces
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- lucide-react icons, motion for animation, three.js utilities available
 
 ## Getting Started
 
-First, run the development server:
+Prereqs: Node.js 18+ and npm (or pnpm/yarn/bun).
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.jsx`. The page auto-updates as you edit the file.
+Build for production:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Start the production build locally:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Lint the project:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/app/page.jsx` � main page UI, sections, and data (projects, gallery, contact links)
+- `src/components/Dock.jsx` � dock menu and quick-launch icons
+- `src/components/DesktopWindow.jsx` � window wrapper used across sections
+- `src/components/DownloadButton.jsx` � download/resume button styling
+- `src/app/globals.css` � global styles and desktop background grid
+- `public/` � static assets like `profile pic.jpeg`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+- Update menu items, projects, gallery cards, and contact links in `src/app/page.jsx`.
+- Swap profile imagery in `public/` and adjust hero copy as needed.
+- Tweak colors/spacing in `src/app/globals.css` or component-level classes.
+
+## Deployment
+
+Deploy to Vercel for best out-of-the-box support (`next build` / `next start` ready). Any Next.js-compatible host works as long as it runs Node 18+.
