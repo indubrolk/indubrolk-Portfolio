@@ -29,21 +29,21 @@ const projects = [
     description:
       "E-commerce-style experience with responsive product browsing and a clean, minimal interface.",
     tech: "React / Vite / Tailwind",
-    link: "https://github.com/yourusername/susara-electronics",
+    link: "https://github.com/indubrolk/SUSARAElectronics",
   },
   {
-    title: "Smart Parking App",
+    title: "Study Companion App",
     description:
-      "Concept app to discover, reserve, and navigate to parking spots in real time with live availability.",
-    tech: "Next.js / REST APIs",
-    link: "#",
+      "This project helps students improve their productivity by providing tools.",
+    tech: "React Js / Ballerina / Rest API",
+    link: "https://github.com/indubrolk/Study-Companion-Bot",
   },
   {
-    title: "Micro:bit Workshop",
+    title: "Simple ML Chat Bot",
     description:
-      "Interactive lessons and demos that help kids learn programming fundamentals with micro:bit.",
-    tech: "Micro:bit / MakeCode / STEM",
-    link: "#",
+      "Simple chat-bot using python",
+    tech: "Python / Machine Learning ",
+    link: "https://github.com/indubrolk/Simple-ML-chatbot#",
   },
 ];
 
@@ -112,6 +112,12 @@ const contactItems = [
   },
 ];
 
+const techStack = {
+  frontend: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+  backend: ["Node.js", "REST APIs", "Ballerina"],
+  tools: ["Git & GitHub", "VS Code", "Figma","WebStorm"],
+};
+
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("projects");
 
@@ -159,7 +165,7 @@ export default function HomePage() {
           ))}
         </section> */}
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-1">
           <DesktopWindow className="lg:col-span-2">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-2" id="home">
@@ -251,6 +257,53 @@ export default function HomePage() {
                 <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Stack</p>
                   <p className="font-semibold text-white">Next.js, React, Tailwind</p>
+                </div>
+              </div>
+            </div>
+          </DesktopWindow>
+
+          <DesktopWindow>
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Tech</span>
+                <span className="text-white/50">Stack</span>
+              </div>
+
+              <div className="grid gap-3 text-sm text-slate-200 sm:grid-cols-1">
+                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                  <p className="text-[11px] uppercase tracking-wide text-white/60">Frontend</p>
+                  <ul className="mt-2 space-y-1">
+                    {techStack.frontend.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                  <p className="text-[11px] uppercase tracking-wide text-white/60">Backend</p>
+                  <ul className="mt-2 space-y-1">
+                    {techStack.backend.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3 sm:col-span-2">
+                  <p className="text-[11px] uppercase tracking-wide text-white/60">Tools</p>
+                  <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
+                    {techStack.tools.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
