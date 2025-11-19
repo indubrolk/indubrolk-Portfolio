@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon } from "lucide-react";
+import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
 import { WordRotate } from "@/components/ui/word-rotate";
@@ -244,20 +244,29 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-3 text-sm text-slate-200">
                 <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Role</p>
-                  <p className="font-semibold text-white">Developer / Designer</p>
+                  <WordRotate
+                    words={["Developer", "Designer","Content Creator"]}
+                    className="font-semibold text-white"
+                  />
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Location</p>
-                  <p className="font-semibold text-white">Sri Lanka</p>
+                  <WordRotate
+                    words={["Kurunegala","Sri Lanka", "Remote-friendly"]}
+                    className="font-semibold text-white"
+                  />
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Focus</p>
-                  <p className="font-semibold text-white">Web Apps, UI Systems</p>
+                  <WordRotate
+                    words={["Web Apps", "UI Systems", "Product Design","Graphic Design","Full-Stack Development","Cloud Technologies","Machine Learning"]}
+                    className="font-semibold text-white"
+                  />
                 </div>
-                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                {/* <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Stack</p>
                   <p className="font-semibold text-white">Next.js, React, Tailwind</p>
-                </div>
+                </div> */}
               </div>
             </div>
           </DesktopWindow>

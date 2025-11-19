@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="Caption added" />
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="cv added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,6 +144,10 @@
       <workItem from="1763399295917" duration="12000" />
       <workItem from="1763402238662" duration="132000" />
       <workItem from="1763410086986" duration="161000" />
+      <workItem from="1763445198881" duration="172000" />
+      <workItem from="1763445594152" duration="339000" />
+      <workItem from="1763461618608" duration="144000" />
+      <workItem from="1763463093433" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -287,7 +293,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763410110051</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="css updated">
+      <option name="closed" value="true" />
+      <created>1763445643851</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1763445643851</updated>
+    </task>
+    <task id="LOCAL-00020" summary="cv added">
+      <option name="closed" value="true" />
+      <created>1763461642888</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1763461642888</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,12 +329,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="page updated" />
-    <MESSAGE value="css updated" />
     <MESSAGE value="navbar updated" />
     <MESSAGE value="ui updated" />
     <MESSAGE value="page.jsx updated" />
     <MESSAGE value="Caption added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Caption added" />
+    <MESSAGE value="css updated" />
+    <MESSAGE value="cv added" />
+    <option name="LAST_COMMIT_MESSAGE" value="cv added" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
