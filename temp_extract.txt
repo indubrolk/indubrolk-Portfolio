@@ -1,0 +1,71 @@
+export default function HomePage() {
+  const [activeTab, setActiveTab] = useState("projects");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <div className="relative min-h-screen overflow-hidden text-slate-50">
+      <div className="pointer-events-none absolute inset-0 opacity-70">
+        <div className="desktops-grid absolute inset-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-black/50" />
+      </div>
+
+      <nav className="fixed inset-x-0 top-0 z-20 px-4 pt-6">
+        <div className="mx-auto flex max-w-5xl flex-col gap-3">
+          
+            <button
+              type="button"
+              className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:hidden"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-nav"
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <span>{isMenuOpen ? "Close" : "Menu"}</span>
+            </button>
+            <div className="hidden w-full justify-center md:flex">
+              <div className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2">
+                {menuIcons.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="group relative flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold text-white/80 transition hover:-translate-y-0.5 hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    aria-label={item.label}
+                  >
+                    <item.icon className="h-6 w-6" />
+                    <span className="pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-900 opacity-0 shadow-lg shadow-black/20 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+                      {item.label}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          {isMenuOpen && (
+            <div
+              id="mobile-nav"
+              className="rounded-3xl border border-white/15 bg-black/60 px-4 py-3 backdrop-blur-xl shadow-xl shadow-black/30 md:hidden"
+            >
+              <div className="flex flex-col divide-y divide-white/10">
+                {menuIcons.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between gap-3 px-2 py-3 text-sm font-semibold text-white/80 transition hover:text-white"
+                  >
+                    <span className="flex items-center gap-3">
+                      <item.icon className="h-5 w-5" />
+                      {item.label}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-white/60" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        
+      </nav>
+
+      <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-28 pb-32">
+        
+        {/* <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">

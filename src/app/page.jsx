@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon } from "lucide-react";
+import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon, Menu, X } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
 import { WordRotate } from "@/components/ui/word-rotate";
@@ -120,6 +120,7 @@ const techStack = {
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("projects");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen overflow-hidden text-slate-50">
@@ -128,21 +129,79 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-black/50" />
       </div>
 
-      <nav className="fixed inset-x-0 top-0 z-20 mx-auto flex max-w-5xl items-center justify-center gap-4 px-6 pt-6">
-        <div className="flex items-center gap-3 rounded-full border border-white/20 bg-white/12 px-5 py-3 backdrop-blur-xl shadow-lg shadow-black/20">
-          {menuIcons.map((item) => (
+      <nav className="fixed inset-x-0 top-0 z-20 px-4 pt-6">
+        <div className="mx-auto flex max-w-5xl flex-col gap-3">
+          <div className="flex items-center gap-3">
             <a
-              key={item.label}
-              href={item.href}
-              className="group relative flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold text-white/80 transition hover:-translate-y-0.5 hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-              aria-label={item.label}
+              href="#home"
+              className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/10"
             >
-              <item.icon className="h-6 w-6" />
-              <span className="pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-900 opacity-0 shadow-lg shadow-black/20 transition group-hover:opacity-100 group-focus-visible:opacity-100">
-                {item.label}
-              </span>
+              {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/30 bg-white/5"> */}
+                <Image
+                  src="/indu.png"
+                  alt="Indu logo"
+                  width={40}
+                  height={40}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              {/* </span> */}
+              {/* <span className="leading-tight">
+                Indu
+                <span className="ml-1 text-xs font-medium text-white/60">Portfolio</span>
+              </span> */}
             </a>
-          ))}
+            <div className="flex flex-1 items-center justify-end gap-3 md:justify-center">
+              <div className="hidden items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 md:flex">
+                {menuIcons.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="group relative flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold text-white/80 transition hover:-translate-y-0.5 hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    aria-label={item.label}
+                  >
+                    <item.icon className="h-6 w-6" />
+                    <span className="pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-900 opacity-0 shadow-lg shadow-black/20 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+                      {item.label}
+                    </span>
+                  </a>
+                ))}
+              </div>
+              <button
+                type="button"
+                className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:hidden"
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-nav"
+              >
+                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                <span>{isMenuOpen ? "Close" : "Menu"}</span>
+              </button>
+            </div>
+          </div>
+          {isMenuOpen && (
+            <div
+              id="mobile-nav"
+              className="rounded-3xl border border-white/15 bg-black/60 px-4 py-3 backdrop-blur-xl shadow-xl shadow-black/30 md:hidden"
+            >
+              <div className="flex flex-col divide-y divide-white/10">
+                {menuIcons.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between gap-3 px-2 py-3 text-sm font-semibold text-white/80 transition hover:text-white"
+                  >
+                    <span className="flex items-center gap-3">
+                      <item.icon className="h-5 w-5" />
+                      {item.label}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-white/60" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
