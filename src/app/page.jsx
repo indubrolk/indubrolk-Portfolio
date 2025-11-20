@@ -134,7 +134,7 @@ export default function HomePage() {
           <div className="flex items-center gap-3">
             <a
               href="#home"
-              className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/10"
+              className="flex backdrop-blur-xl items-center gap-3 h-15 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/10"
             >
               {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/30 bg-white/5"> */}
                 <Image
@@ -142,7 +142,7 @@ export default function HomePage() {
                   alt="Indu logo"
                   width={40}
                   height={40}
-                  className="h-full w-full object-cover"
+                  className="h-8 w-25 object-cover"
                   priority
                 />
               {/* </span> */}
@@ -151,8 +151,9 @@ export default function HomePage() {
                 <span className="ml-1 text-xs font-medium text-white/60">Portfolio</span>
               </span> */}
             </a>
-            <div className="flex flex-1 items-center justify-end gap-3 md:justify-center">
-              <div className="hidden items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 md:flex">
+            {/*menu bar*/}
+            <div className="flex flex-1 items-center justify-end gap-3 md:justify-center ">
+              <div className="hidden items-center backdrop-blur-xl gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 md:flex ">
                 {menuIcons.map((item) => (
                   <a
                     key={item.label}
