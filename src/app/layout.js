@@ -16,9 +16,9 @@ export const metadata = {
   title: "indu brolk",
   description: "Your Best Technocract",
   icons: {
-    icon: "/indu fav.png",
-    shortcut: "/indu fav.png",
-    apple: "/indu fav.png",
+    icon: "/indu2.png",
+    shortcut: "/indu2.png",
+    apple: "/indu2.png",
   },
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" sizes="180*180" href="/indu fav.png" />
+        <link rel="icon" href="/indu2.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

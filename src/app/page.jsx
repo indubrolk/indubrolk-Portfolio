@@ -132,17 +132,17 @@ export default function HomePage() {
       <nav className="fixed inset-x-0 top-0 z-20 px-4 pt-6">
         <div className="mx-auto flex max-w-5xl flex-col gap-3">
           <div className="flex items-center gap-3">
-            <a
+            {/* <a
               href="#home"
               className="flex backdrop-blur-xl items-center gap-3 h-15 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/10"
-            >
-              {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/30 bg-white/5"> */}
+            > */}
+              {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl bg-white/5"> */}
                 <Image
-                  src="/indu.png"
+                  src="/indu2.png"
                   alt="Indu logo"
                   width={40}
                   height={40}
-                  className="h-8 w-25 object-cover"
+                  className="h-13 w-20 object-cover"
                   priority
                 />
               {/* </span> */}
@@ -150,7 +150,7 @@ export default function HomePage() {
                 Indu
                 <span className="ml-1 text-xs font-medium text-white/60">Portfolio</span>
               </span> */}
-            </a>
+            {/* </a> */}
             {/*menu bar*/}
             <div className="flex flex-1 items-center justify-end gap-3 md:justify-center ">
               <div className="hidden items-center backdrop-blur-xl gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 md:flex ">

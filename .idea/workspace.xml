@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="nav bar updated">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,6 +150,7 @@
       <workItem from="1763463093433" duration="10000" />
       <workItem from="1763479468972" duration="6000" />
       <workItem from="1763578526863" duration="1072000" />
+      <workItem from="1763640107131" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
