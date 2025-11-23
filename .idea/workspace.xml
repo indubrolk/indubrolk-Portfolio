@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="nav bar updated">
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="UI Updated">
+      <change afterPath="$PROJECT_DIR$/src/components/Footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +152,8 @@
       <workItem from="1763479468972" duration="6000" />
       <workItem from="1763578526863" duration="1072000" />
       <workItem from="1763640107131" duration="8000" />
-      <workItem from="1763897312046" duration="168000" />
+      <workItem from="1763897312046" duration="345000" />
+      <workItem from="1763907394184" duration="565000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -322,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763578611483</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="UI Updated">
+      <option name="closed" value="true" />
+      <created>1763897528020</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1763897528020</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +358,8 @@
     <MESSAGE value="css updated" />
     <MESSAGE value="cv added" />
     <MESSAGE value="nav bar updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="nav bar updated" />
+    <MESSAGE value="UI Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI Updated" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
