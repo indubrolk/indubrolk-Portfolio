@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
 import GradientText from "@/components/GradientText";
 
 export default function Footer() {
@@ -34,4 +32,4 @@ export default function Footer() {
         </p>
     </div>
     )
-}
+};
