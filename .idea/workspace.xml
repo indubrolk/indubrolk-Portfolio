@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="Files changed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContentShowcase.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentShowcase.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.jsx" afterDir="false" />
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="Footer added to contents page">
+      <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +154,7 @@
       <workItem from="1763640107131" duration="8000" />
       <workItem from="1763897312046" duration="345000" />
       <workItem from="1763907394184" duration="1339000" />
-      <workItem from="1763915466441" duration="2652000" />
+      <workItem from="1763915466441" duration="2791000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -342,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763908658424</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Footer added to contents page">
+      <option name="closed" value="true" />
+      <created>1763919260221</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1763919260222</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +377,8 @@
     <MESSAGE value="nav bar updated" />
     <MESSAGE value="UI Updated" />
     <MESSAGE value="Files changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Files changed" />
+    <MESSAGE value="Footer added to contents page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Footer added to contents page" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
