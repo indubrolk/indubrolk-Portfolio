@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="Footer added to contents page">
-      <change afterPath="$PROJECT_DIR$/public/GPT 4o.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/arti1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/arti2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/arti3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/arti4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/s24-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/s24-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/s25 edge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Articles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="Article page added">
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/content/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContentShowcase.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentShowcase.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +162,7 @@
       <workItem from="1764043003669" duration="900000" />
       <workItem from="1764070509802" duration="118000" />
       <workItem from="1764070735470" duration="66000" />
+      <workItem from="1764325718796" duration="439000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -377,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763919326152</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Article page added">
+      <option name="closed" value="true" />
+      <created>1764325752269</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1764325752269</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +402,8 @@
     <MESSAGE value="UI Updated" />
     <MESSAGE value="Files changed" />
     <MESSAGE value="Footer added to contents page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footer added to contents page" />
+    <MESSAGE value="Article page added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Article page added" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
