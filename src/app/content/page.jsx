@@ -2,6 +2,7 @@ import { FileText, Home, PlayCircle } from "lucide-react";
 import ContentShowcase from "../../components/ContentShowcase";
 import DesktopWindow from "../../components/DesktopWindow";
 import Dock from "../../components/Dock";
+import Articles from "../../components/Articles";
 
 const videoItems = [
   {
@@ -63,21 +64,9 @@ export default function ContentPage() {
         </div>
       </nav>
 
-      <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-24 pb-32">
+      <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-32 pb-32">
         <DesktopWindow>
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-              <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Content</span>
-              <span className="text-white/50">Videos & Articles</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <PlayCircle className="h-5 w-5 text-sky-200" />
-              <p className="text-sm text-slate-200">
-                Watch my latest walkthroughs and read articles covering UI systems, Next.js patterns, and delivery
-                playbooks.
-              </p>
-            </div>
-          </div>
+          <Articles />
         </DesktopWindow>
 
         <ContentShowcase videos={videoItems} articles={articleItems} />

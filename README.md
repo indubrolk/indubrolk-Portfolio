@@ -1,26 +1,28 @@
-# indu brolk Desktop Portfolio
+# Desktop Portfolio
 
-A desktop-inspired portfolio built with Next.js 16 and Tailwind CSS 4. The experience mimics an OS desktop with a dock, draggable windows, and animated sections to highlight projects, skills, and contact links.
+A desktop-inspired portfolio built with Next.js and Tailwind CSS. The experience mimics an OS desktop with a dock, draggable windows, and animated sections to highlight projects, skills, and contact links.
 
 ## Features
 
 - OS-style layout with a dock, desktop icons, and windowed panels for sections
 - Hero section with rotating headline copy and quick navigation to About, Projects, and Contact
 - Project cards with tech stack tags and outbound links
-- Gallery grid for visual work streams (UI, branding, maker, and media)
+- Content showcase for articles and videos
 - Contact shortcuts for email and social profiles
-- Fully responsive styling with Tailwind CSS and Radix-inspired UI pieces
+- Fully responsive styling with Tailwind CSS
 
 ## Tech Stack
 
-- Next.js 16 (App Router)
-- React 19
-- Tailwind CSS 4
-- lucide-react icons, motion for animation, three.js utilities available
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide React](https://lucide.dev/guide/packages/lucide-react) for icons
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [Three.js](https://threejs.org/) for 3D graphics
 
 ## Getting Started
 
-Prereqs: Node.js 18+ and npm (or pnpm/yarn/bun).
+Prerequisites: Node.js 18+ and npm (or pnpm/yarn/bun).
 
 Install dependencies:
 
@@ -56,16 +58,20 @@ npm run lint
 
 ## Project Structure
 
-- `src/app/page.jsx` � main page UI, sections, and data (projects, gallery, contact links)
-- `src/components/Dock.jsx` � dock menu and quick-launch icons
-- `src/components/DesktopWindow.jsx` � window wrapper used across sections
-- `src/components/DownloadButton.jsx` � download/resume button styling
-- `src/app/globals.css` � global styles and desktop background grid
-- `public/` � static assets like `profile pic.jpeg`
+- `src/app/page.jsx`: Main page UI, sections, and data.
+- `src/app/layout.js`: The main layout for the application.
+- `src/components/`: Contains all the React components.
+  - `AppShell.jsx`: The main shell of the application.
+  - `Dock.jsx`: Dock menu and quick-launch icons.
+  - `DesktopWindow.jsx`: Window wrapper used across sections.
+  - `ContentShowcase.jsx`: Component to showcase articles and videos.
+  - `Footer.jsx`: The footer of the application.
+- `src/lib/`: Contains utility functions and data.
+- `public/`: Static assets like images and icons.
 
 ## Customization
 
-- Update menu items, projects, gallery cards, and contact links in `src/app/page.jsx`.
+- Update menu items, projects, articles, and videos in the respective data files in `src/lib/`.
 - Swap profile imagery in `public/` and adjust hero copy as needed.
 - Tweak colors/spacing in `src/app/globals.css` or component-level classes.
 

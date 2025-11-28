@@ -83,31 +83,31 @@ const quickLinks = [
 
 const contactItems = [
   {
-    label: "Email",
+    // label: "Email",
     // value: "youremail@example.com",
     href: "mailto:indubro.lk@example.com",
     icon: Mail,
   },
   {
-    label: "LinkedIn",
+    // label: "LinkedIn",
     // value: "linkedin.com/in/your-profile",
     href: "https://www.linkedin.com/in/indu-jay/",
     icon: Linkedin,
   },
   {
-    label: "Instagram",
+    // label: "Instagram",
     // value: "github.com/yourusername",
     href: "https://www.instagram.com/indu_brolk/",
     icon: InstagramIcon,
   },
   {
-    label: "Facebook",
+    // label: "Facebook",
     // value: "github.com/yourusername",
     href: "https://github.com/yourusername",
     icon: FacebookIcon,
   },
   {
-    label: "X",
+    // label: "X",
     // value: "github.com/yourusername",
     href: "https://github.com/yourusername",
     icon: TwitterIcon,
@@ -403,11 +403,10 @@ export default function HomePage() {
             {activeTab === "projects" ? (
               <div className="grid gap-4 sm:grid-cols-2">
                 {projects.map((project) => (
-                  <a
+                  <button
                     key={project.title}
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
+                    type="button"
+                    onClick={() => window.open(project.link, "_blank", "noopener,noreferrer")}
                     className="group flex flex-col gap-2 rounded-2xl border border-white/10 bg-gradient-to-br from-white/6 via-white/4 to-white/2 p-4 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/10"
                   >
                     <div className="flex items-start justify-between gap-3">
@@ -422,7 +421,7 @@ export default function HomePage() {
                     <p className="text-[12px] font-medium uppercase tracking-wide text-sky-200/90">
                       {project.tech}
                     </p>
-                  </a>
+                  </button>
                 ))}
               </div>
             ) : (
@@ -459,12 +458,12 @@ export default function HomePage() {
               </p>
               <div className="space-y-2 text-sm text-slate-100">
                 {contactItems.map((item) => (
-                  <a
+                  <button
                     key={item.label}
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/8 px-3 py-3 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/12"
+                    className="group flex items-center justify-center rounded-xl border border-white/10 bg-white/8 px-3 py-3 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/12"
                   >
                     <div className="flex items-center gap-3">
                       <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white">
@@ -476,7 +475,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <ArrowUpRight className="h-4 w-4 text-white/60 transition group-hover:text-white" />
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>
