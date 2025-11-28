@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import AppShell from "../components/AppShell";
+// import AppShell from "../components/AppShell";
+import { Preloader } from "../components/Preloader";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,23 +16,23 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "indu brolk",
   description: "Your Best Technocract",
-  icons: {
-    icon: "/indu2.png",
-    shortcut: "/indu2.png",
-    apple: "/indu2.png",
-  },
+  // icons: {
+  //   icon: "/indu2.png",
+  //   shortcut: "/indu2.png",
+  //   apple: "/indu2.png",
+  // },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <link rel="icon" href="/indu2.png" />
-      </head>
+      </head> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > 
-        <AppShell>{children}</AppShell>
+        <Preloader>{children}</Preloader>
       </body>
     </html>
   );
