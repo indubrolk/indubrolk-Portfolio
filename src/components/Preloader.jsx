@@ -9,7 +9,7 @@ export function Preloader({ children }) {
 
   useEffect(() => {
     // Let the terminal animation play, then reveal the app.
-    const timer = setTimeout(() => setDone(true), 5500);
+    const timer = setTimeout(() => setDone(true), 5300);
     return () => clearTimeout(timer);
   }, []);
 

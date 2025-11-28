@@ -83,32 +83,32 @@ const quickLinks = [
 
 const contactItems = [
   {
-    label: "Email",
-    value: "indubro.lk@example.com",
+    //label: "Email",
+    //value: "indubro.lk@example.com",
     href: "mailto:indubro.lk@example.com",
     icon: Mail,
   },
   {
-    label: "LinkedIn",
-    value: "linkedin.com/in/indu-jay",
+    //label: "LinkedIn",
+    //value: "linkedin.com/in/indu-jay",
     href: "https://www.linkedin.com/in/indu-jay/",
     icon: Linkedin,
   },
   {
-    label: "Instagram",
-    value: "instagram.com/indu_brolk",
+    //label: "Instagram",
+    //value: "instagram.com/indu_brolk",
     href: "https://www.instagram.com/indu_brolk/",
     icon: InstagramIcon,
   },
   {
-    label: "Facebook",
-    value: "facebook.com/indu.brolk",
+    //label: "Facebook",
+    //value: "facebook.com/indu.brolk",
     href: "https://facebook.com/indu.brolk",
     icon: FacebookIcon,
   },
   {
-    label: "X",
-    value: "x.com/indu_brolk",
+    //label: "X",
+    //value: "x.com/indu_brolk",
     href: "https://x.com/indu_brolk",
     icon: TwitterIcon,
   },
