@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon, Menu, X } from "lucide-react";
+import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon, Menu, X, Maximize2 } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
 import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
 import Footer from "@/components/Footer";
+import { toggleFullscreen } from "@/lib/toggleFullscreen";
 
 
 const menuIcons = [
@@ -118,6 +119,12 @@ const techStack = {
   frontend: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
   backend: ["Node.js", "REST APIs", "Ballerina"],
   tools: ["Git & GitHub", "VS Code", "Figma","WebStorm"],
+};
+
+const handleFullscreenClick = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  toggleFullscreen(event.currentTarget.closest("[data-card]"));
 };
 
 export default function HomePage() {
@@ -304,21 +311,21 @@ export default function HomePage() {
                 I enjoy collaborating with teams, sketching interfaces, and building dependable experiences.
               </p>
               <div className="grid grid-cols-2 gap-3 text-sm text-slate-200">
-                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Role</p>
                   <WordRotate
                     words={["Developer", "Designer","Content Creator"]}
                     className="font-semibold text-white"
                   />
                 </div>
-                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Location</p>
                   <WordRotate
                     words={["Kurunegala","Sri Lanka", "Remote-friendly"]}
                     className="font-semibold text-white"
                   />
                 </div>
-                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Focus</p>
                   <WordRotate
                     words={["Web Apps", "UI Systems", "Product Design","Graphic Design","Full-Stack Development","Cloud Technologies","Machine Learning"]}
@@ -341,7 +348,7 @@ export default function HomePage() {
               </div>
 
               <div className="grid gap-3 text-sm text-slate-200 sm:grid-cols-1">
-                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Frontend</p>
                   <ul className="mt-2 space-y-1">
                     {techStack.frontend.map((item) => (
@@ -353,7 +360,7 @@ export default function HomePage() {
                   </ul>
                 </div>
 
-                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Backend</p>
                   <ul className="mt-2 space-y-1">
                     {techStack.backend.map((item) => (
@@ -365,7 +372,7 @@ export default function HomePage() {
                   </ul>
                 </div>
 
-                <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3 sm:col-span-2">
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4 sm:col-span-2" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Tools</p>
                   <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
                     {techStack.tools.map((item) => (
@@ -403,25 +410,35 @@ export default function HomePage() {
             {activeTab === "projects" ? (
               <div className="grid gap-4 sm:grid-cols-2">
                 {projects.map((project) => (
-                  <button
-                    key={project.title}
-                    type="button"
-                    onClick={() => window.open(project.link, "_blank", "noopener,noreferrer")}
-                    className="group flex flex-col gap-2 rounded-2xl border border-white/10 bg-gradient-to-br from-white/6 via-white/4 to-white/2 p-4 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/10"
-                  >
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h3 className="text-base font-semibold text-white">{project.title}</h3>
-                        <p className="text-sm text-slate-200">{project.description}</p>
+                  <div key={project.title} className="relative" data-card>
+                    <button
+                      type="button"
+                      onClick={() => window.open(project.link, "_blank", "noopener,noreferrer")}
+                      className="group flex w-full flex-col gap-2 rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 via-white/6 to-white/4 backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/15"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <h3 className="text-base font-semibold text-white">{project.title}</h3>
+                          <p className="text-sm text-slate-200">{project.description}</p>
+                        </div>
+                        <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] text-white/80">
+                          Open
+                        </span>
                       </div>
-                      <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] text-white/80">
-                        Open
-                      </span>
-                    </div>
-                    <p className="text-[12px] font-medium uppercase tracking-wide text-sky-200/90">
-                      {project.tech}
-                    </p>
-                  </button>
+                      <p className="text-[12px] font-medium uppercase tracking-wide text-sky-200/90">
+                        {project.tech}
+                      </p>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleFullscreenClick}
+                      className="absolute right-3 top-3 z-10 rounded-full border border-white/20 bg-black/40 p-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                      aria-label="Toggle full screen"
+                      title="Toggle full screen"
+                    >
+                      <Maximize2 className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
                 ))}
               </div>
             ) : (
@@ -429,8 +446,18 @@ export default function HomePage() {
                 {galleryItems.map((item) => (
                   <div
                     key={item.title}
-                    className={`group flex flex-col gap-3 rounded-2xl border border-white/10 bg-gradient-to-br ${item.accent} p-4 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/20`}
+                    data-card
+                    className={`group relative flex flex-col gap-3 rounded-3xl border border-white/15 bg-gradient-to-br ${item.accent} backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/20`}
                   >
+                    <button
+                      type="button"
+                      onClick={handleFullscreenClick}
+                      className="absolute right-3 top-3 z-10 rounded-full border border-white/20 bg-black/40 p-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                      aria-label="Toggle full screen"
+                      title="Toggle full screen"
+                    >
+                      <Maximize2 className="h-3.5 w-3.5" />
+                    </button>
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <h3 className="text-base font-semibold text-white">{item.title}</h3>
@@ -458,24 +485,33 @@ export default function HomePage() {
               </p>
               <div className="space-y-2 text-sm text-slate-100">
                 {contactItems.map((item) => (
-                  <button
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center justify-center rounded-xl border border-white/10 bg-white/8 px-3 py-3 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/12"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white">
-                        <item.icon className="h-5 w-5" />
-                      </span>
-                      <div>
-                        <p className="text-[11px] uppercase tracking-wide text-white/60">{item.label}</p>
-                        <p className="font-semibold text-white group-hover:text-sky-200">{item.value}</p>
+                  <div key={item.label} className="relative" data-card>
+                    <button
+                      type="button"
+                      onClick={() => window.open(item.href, "_blank", "noopener,noreferrer")}
+                      className="group flex w-full items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/14"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white">
+                          <item.icon className="h-5 w-5" />
+                        </span>
+                        <div>
+                          <p className="text-[11px] uppercase tracking-wide text-white/60">{item.label}</p>
+                          <p className="font-semibold text-white group-hover:text-sky-200">{item.value}</p>
+                        </div>
                       </div>
-                    </div>
-                    <ArrowUpRight className="h-4 w-4 text-white/60 transition group-hover:text-white" />
-                  </button>
+                      <ArrowUpRight className="h-4 w-4 text-white/60 transition group-hover:text-white" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleFullscreenClick}
+                      className="absolute right-3 top-3 z-10 rounded-full border border-white/20 bg-black/40 p-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                      aria-label="Toggle full screen"
+                      title="Toggle full screen"
+                    >
+                      <Maximize2 className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>

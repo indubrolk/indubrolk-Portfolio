@@ -15,9 +15,9 @@
     "ldrs": "^1.1.9",
     "lucide-react": "^0.554.0",
     "motion": "^12.23.24",
-    "next": "^16.1.0-canary.4",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "tailwind-merge": "^3.4.0",
     "three": "^0.181.1"
   },
