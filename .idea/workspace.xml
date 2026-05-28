@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="Article page added">
+    <list default="true" id="ba7b4c8f-46d1-4585-a30e-0e76faee0602" name="Changes" comment="updated nextjs version">
+      <change afterPath="$PROJECT_DIR$/public/profile pic2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CursorGlow.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContentShowcase.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentShowcase.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DesktopWindow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DesktopWindow.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/apple-cards-carousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/apple-cards-carousel.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,14 +19,31 @@
   <component name="CopilotChats">
     <option name="panelChat">
       <chat>
-        <option name="activeSessionId" value="2b1a79ca-86fc-4fa2-a736-32d4597b1979" />
+        <option name="activeSessionId" value="a40fe2d0-13e0-419a-a409-d979b578edc0" />
         <option name="sessions">
           <session>
             <option name="chatType" value="PANEL" />
             <option name="id" value="2b1a79ca-86fc-4fa2-a736-32d4597b1979" />
             <option name="modeId" value="Agent" />
             <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="gpt-5.2-codex" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="1688aac4-a236-44ae-aa69-714575ce590f" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
             <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="a40fe2d0-13e0-419a-a409-d979b578edc0" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="gpt-5.2-codex" />
             <option name="targetType" value="LOCAL" />
           </session>
         </option>
@@ -39,8 +56,15 @@
       <entry key="_D:/Projects/indubrolk-Portfolio" value="31vG5NHH2nfa21276niw8MIe0tw" />
     </persistenceIdMap>
   </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="agent-panel" value="GPT-5.2-Codex" />
+      <entry key="chat-panel" value="GPT-5.2-Codex" />
+    </selectedModels>
+  </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="59" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,6 +87,25 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.2066489992567335E-271" />
+      <entry key="S2" value="6.283437031808128E-68" />
+      <entry key="S5" value="3.9726762726897115E-27" />
+      <entry key="S10" value="1.6931182028885573E-13" />
+      <entry key="S30" value="2.4030435933204727E-4" />
+      <entry key="S60" value="0.05095699542305067" />
+      <entry key="M2" value="0.7955063464034013" />
+      <entry key="M5" value="4.619006747801959" />
+      <entry key="M10" value="9.310250575652894" />
+      <entry key="M15" value="12.710155869981667" />
+      <entry key="M30" value="19.320934435289928" />
+      <entry key="H1" value="25.34572582341953" />
+      <entry key="H2" value="29.585143114407376" />
+      <entry key="H4" value="32.12432433444253" />
+      <entry key="D1" value="34.49527923379208" />
+      <entry key="W1" value="34.927244939999596" />
+    </decayedCancelled>
+    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
       <entry key="S2" value="1.0" />
@@ -70,54 +113,35 @@
       <entry key="S10" value="1.0" />
       <entry key="S30" value="1.0" />
       <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
-    </decayedCancelled>
-    <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="M2" value="1.0000000060459868" />
+      <entry key="M5" value="1.0005159253659046" />
+      <entry key="M10" value="1.022713990532369" />
+      <entry key="M15" value="1.0802039258771317" />
+      <entry key="M30" value="1.2832029764623454" />
+      <entry key="H1" value="1.532168184376279" />
+      <entry key="H2" value="1.7294985842181458" />
+      <entry key="H4" value="1.8541068927354147" />
+      <entry key="D1" value="1.9740592414796976" />
+      <entry key="W1" value="1.9962523038776387" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.28322097132394963" />
-      <entry key="MS500" value="0.7770072687840495" />
-      <entry key="S2" value="0.9388717473154521" />
-      <entry key="S5" value="0.9750850730578944" />
-      <entry key="S10" value="0.9874639603843243" />
-      <entry key="S30" value="0.9958037361277761" />
-      <entry key="S60" value="0.9978996623547761" />
-      <entry key="M2" value="0.998949279170257" />
-      <entry key="M5" value="0.9995795791120999" />
-      <entry key="M10" value="0.999789767457189" />
-      <entry key="M15" value="0.9998598400601424" />
-      <entry key="M30" value="0.9999299175742979" />
-      <entry key="H1" value="0.9999649581731842" />
-      <entry key="H2" value="0.9999824789330982" />
-      <entry key="H4" value="0.9999912394281752" />
-      <entry key="D1" value="0.9999985398993662" />
-      <entry key="W1" value="0.9999997914140646" />
+      <entry key="MS100" value="1.742126660479457E-16" />
+      <entry key="MS500" value="7.050435525012187E-4" />
+      <entry key="S2" value="0.162949858002647" />
+      <entry key="S5" value="0.4839735134468687" />
+      <entry key="S10" value="0.6956820491051183" />
+      <entry key="S30" value="0.8863113748830618" />
+      <entry key="S60" value="0.9918747622030796" />
+      <entry key="M2" value="1.7626383417861147" />
+      <entry key="M5" value="5.60098288456329" />
+      <entry key="M10" value="10.320995288044294" />
+      <entry key="M15" value="13.781218369674367" />
+      <entry key="M30" value="20.598456283963305" />
+      <entry key="H1" value="26.874534905482864" />
+      <entry key="H2" value="31.31277543811141" />
+      <entry key="H4" value="33.97744141378952" />
+      <entry key="D1" value="36.46916460564221" />
+      <entry key="W1" value="36.92347217257698" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -127,6 +151,20 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="31vG5NHH2nfa21276niw8MIe0tw" />
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="gpt-5.2-codex" />
+          </model>
+        </option>
+        <option name="targetType" value="LOCAL" />
+      </template>
+    </option>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -144,6 +182,7 @@
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
@@ -174,6 +213,7 @@
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\indubrolk-Portfolio\public" />
       <recent name="D:\Projects\NextJs - Portfolio" />
       <recent name="D:\Projects\NextJs - Portfolio\my-app\public" />
       <recent name="D:\Projects\NextJs - Portfolio\my-app\src\app" />
@@ -259,6 +299,9 @@
       <workItem from="1764070735470" duration="66000" />
       <workItem from="1764325718796" duration="439000" />
       <workItem from="1779912025271" duration="50000" />
+      <workItem from="1779912094222" duration="1050000" />
+      <workItem from="1779943870224" duration="2396000" />
+      <workItem from="1779946906688" duration="608000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -468,7 +511,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764325752269</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Article page added">
+      <option name="closed" value="true" />
+      <created>1779912296310</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1779912296310</updated>
+    </task>
+    <task id="LOCAL-00028" summary="updated nextjs version">
+      <option name="closed" value="true" />
+      <created>1779912545159</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1779912545159</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +558,8 @@
     <MESSAGE value="Files changed" />
     <MESSAGE value="Footer added to contents page" />
     <MESSAGE value="Article page added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Article page added" />
+    <MESSAGE value="updated nextjs version" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated nextjs version" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

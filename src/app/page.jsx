@@ -84,32 +84,32 @@ const quickLinks = [
 
 const contactItems = [
   {
-    //label: "Email",
-    //value: "indubro.lk@example.com",
+    label: "Email",
+    value: "indubro.lk@example.com",
     href: "mailto:indubro.lk@example.com",
     icon: Mail,
   },
   {
-    //label: "LinkedIn",
-    //value: "linkedin.com/in/indu-jay",
+    label: "LinkedIn",
+    value: "linkedin.com/in/indu-jay",
     href: "https://www.linkedin.com/in/indu-jay/",
     icon: Linkedin,
   },
   {
-    //label: "Instagram",
-    //value: "instagram.com/indu_brolk",
+    label: "Instagram",
+    value: "instagram.com/indu_brolk",
     href: "https://www.instagram.com/indu_brolk/",
     icon: InstagramIcon,
   },
   {
-    //label: "Facebook",
-    //value: "facebook.com/indu.brolk",
+    label: "Facebook",
+    value: "facebook.com/indu.brolk",
     href: "https://facebook.com/indu.brolk",
     icon: FacebookIcon,
   },
   {
-    //label: "X",
-    //value: "x.com/indu_brolk",
+    label: "X",
+    value: "x.com/indu_brolk",
     href: "https://x.com/indu_brolk",
     icon: TwitterIcon,
   },
@@ -257,7 +257,7 @@ export default function HomePage() {
                   />
                 </h1>
                 <p className="max-w-2xl text-sm text-slate-200 sm:text-base">
-                    Hello! I' m Chamod Induwara, a passionate tech enthusiast, YouTuber, Tech Article Writer and IT undergraduate at the Sabaragamuwa University of Sri Lanka. I enjoy exploring the latest in technology and sharing insights through my YouTube channel and engaging tech articles. Whether it's diving into software, gadgets, or creative tech solutions, I�m dedicated to making tech accessible and enjoyable for everyone. Join me on my journey as I explore, learn, and share everything tech from the heart of Sri Lanka!
+                    Hello! I' m Chamod Induwara, a passionate tech enthusiast, YouTuber, Tech Article Writer and IT undergraduate at the Sabaragamuwa University of Sri Lanka. I enjoy exploring the latest in technology and sharing insights through my YouTube channel and engaging tech articles. Whether it's diving into software, gadgets, or creative tech solutions, Im dedicated to making tech accessible and enjoyable for everyone. Join me on my journey as I explore, learn, and share everything tech from the heart of Sri Lanka!
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {["Next.js", "React", "Tailwind", "UI/UX", "Electronics"].map((chip) => (
@@ -271,16 +271,15 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative mx-auto h-40 w-40 shrink-0 overflow-hidden rounded-full border border-black/15 bg-gradient-to-br from-white/10 via-white/5 to-white/0 shadow-[0_18px_40px_-20px_rgba(0,0,0,0.65)]">
+              <div className="relative mx-auto h-100 w-100 shrink-0 overflow-hidden">
                 <Image
-                  src="/profile pic.jpeg"
+                  src="/profile pic2.png"
                   alt="Induwara Jayakody"
                   fill
-                  sizes="160px"
+                  sizes="224px"
                   className="object-cover"
                   priority
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-white/5" />
               </div>
 
               {/* <div className="grid gap-3 sm:grid-cols-3">
@@ -485,7 +484,7 @@ export default function HomePage() {
               </p>
               <div className="space-y-2 text-sm text-slate-100">
                 {contactItems.map((item) => (
-                  <div key={item.label} className="relative" data-card>
+                  <div key={item.href} className="relative" data-card>
                     <button
                       type="button"
                       onClick={() => window.open(item.href, "_blank", "noopener,noreferrer")}
