@@ -1,18 +1,12 @@
 "use client";
 
-import { FileText, PlayCircle, Maximize2 } from "lucide-react";
+import { FileText, PlayCircle } from "lucide-react";
 import DesktopWindow from "./DesktopWindow";
 import Footer from "./Footer";
 import Articles from "./Articles";
-import { toggleFullscreen } from "@/lib/toggleFullscreen";
+import ExpandableCard from "./ExpandableCard";
 
 export default function ContentShowcase({ videos = [], articles = [] }) {
-  const handleFullscreenClick = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    toggleFullscreen(event.currentTarget.closest("[data-card]"));
-  };
-
   return (
     <>
       <DesktopWindow id="content">
@@ -68,7 +62,7 @@ export default function ContentShowcase({ videos = [], articles = [] }) {
               </div>
               <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-3">
                 {videos.map((video) => (
-                  <div key={video.title} className="relative" data-card>
+                  <ExpandableCard key={video.title}>
                     <a
                       href={video.href}
                       target="_blank"
@@ -89,16 +83,7 @@ export default function ContentShowcase({ videos = [], articles = [] }) {
                         <p className="text-[11px] uppercase tracking-wide text-sky-200/90">{video.duration}</p>
                       )}
                     </a>
-                    <button
-                      type="button"
-                      onClick={handleFullscreenClick}
-                      className="absolute right-3 top-3 z-10 rounded-full border border-white/20 bg-black/40 p-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-                      aria-label="Toggle full screen"
-                      title="Toggle full screen"
-                    >
-                      <Maximize2 className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
+                  </ExpandableCard>
                 ))}
               </div>
             </div>
