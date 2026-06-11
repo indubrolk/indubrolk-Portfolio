@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon, Menu, X } from "lucide-react";
+import { FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight, InstagramIcon, TwitterIcon, FacebookIcon, Menu, X } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
 import ExpandableCard from "../components/ExpandableCard";
@@ -85,8 +85,8 @@ const quickLinks = [
 const contactItems = [
   {
     label: "Email",
-    value: "indubro.lk@example.com",
-    href: "mailto:indubro.lk@example.com",
+    value: "indubro.lk@gmail.com",
+    href: "mailto:indubro.lk@gmail.com",
     icon: Mail,
   },
   {
@@ -118,7 +118,7 @@ const contactItems = [
 const techStack = {
   frontend: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
   backend: ["Node.js", "REST APIs", "Ballerina"],
-  tools: ["Git & GitHub", "VS Code", "Figma","WebStorm"],
+  tools: ["Git & GitHub", "VS Code", "Figma", "WebStorm"],
 };
 
 
@@ -141,17 +141,19 @@ export default function HomePage() {
               href="#home"
               className="flex backdrop-blur-xl items-center gap-3 h-15 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/10"
             > */}
-              {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl bg-white/5"> */}
-                <Image
-                  src="/indu2.png"
-                  alt="Indu logo"
-                  width={40}
-                  height={40}
-                  className="h-13 w-20 object-cover"
-                  priority
-                />
-              {/* </span> */}
-              {/* <span className="leading-tight">
+            {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl bg-white/5"> */}
+            <a href="#home" className="transition hover:opacity-80">
+              <Image
+                src="/indu2.png"
+                alt="Indu logo"
+                width={40}
+                height={40}
+                className="h-13 w-20 object-cover"
+                priority
+              />
+            </a>
+            {/* </span> */}
+            {/* <span className="leading-tight">
                 Indu
                 <span className="ml-1 text-xs font-medium text-white/60">Portfolio</span>
               </span> */}
@@ -163,11 +165,12 @@ export default function HomePage() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="group relative flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold text-white/80 transition hover:-translate-y-0.5 hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    style={{ textDecoration: 'none' }}
+                    className="group relative flex h-11 items-center justify-center rounded-full px-2.5 text-base font-semibold text-white/80 no-underline transition-all duration-500 ease-out hover:bg-white/20 hover:text-white hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                     aria-label={item.label}
                   >
-                    <item.icon className="h-6 w-6" />
-                    <span className="pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-900 opacity-0 shadow-lg shadow-black/20 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <item.icon className="h-6 w-6 shrink-0" />
+                    <span style={{ textDecoration: 'none' }} className="overflow-hidden whitespace-nowrap text-sm font-medium transition-all duration-500 ease-out max-w-0 opacity-0 group-hover:max-w-[100px] group-hover:ml-2 group-hover:opacity-100">
                       {item.label}
                     </span>
                   </a>
@@ -212,7 +215,7 @@ export default function HomePage() {
       </nav>
 
       <main id="home" className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-28 pb-32">
-        
+
         {/* <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {desktopIcons.map((item) => (
             <a
@@ -253,7 +256,7 @@ export default function HomePage() {
                   />
                 </h1>
                 <p className="max-w-2xl text-sm text-slate-200 sm:text-base">
-                    Hello! I' m Chamod Induwara, a passionate tech enthusiast, YouTuber, Tech Article Writer and IT undergraduate at the Sabaragamuwa University of Sri Lanka. I enjoy exploring the latest in technology and sharing insights through my YouTube channel and engaging tech articles. Whether it's diving into software, gadgets, or creative tech solutions, Im dedicated to making tech accessible and enjoyable for everyone. Join me on my journey as I explore, learn, and share everything tech from the heart of Sri Lanka!
+                  Hello! I' m Chamod Induwara, a passionate tech enthusiast, YouTuber, Tech Article Writer and IT undergraduate at the Sabaragamuwa University of Sri Lanka. I enjoy exploring the latest in technology and sharing insights through my YouTube channel and engaging tech articles. Whether it's diving into software, gadgets, or creative tech solutions, Im dedicated to making tech accessible and enjoyable for everyone. Join me on my journey as I explore, learn, and share everything tech from the heart of Sri Lanka!
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {["Next.js", "React", "Tailwind", "UI/UX", "Electronics"].map((chip) => (
@@ -309,21 +312,21 @@ export default function HomePage() {
                 <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Role</p>
                   <WordRotate
-                    words={["Developer", "Designer","Content Creator"]}
+                    words={["Developer", "Designer", "Content Creator"]}
                     className="font-semibold text-white"
                   />
                 </div>
                 <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Location</p>
                   <WordRotate
-                    words={["Kurunegala","Sri Lanka", "Remote-friendly"]}
+                    words={["Kurunegala", "Sri Lanka", "Remote-friendly"]}
                     className="font-semibold text-white"
                   />
                 </div>
                 <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Focus</p>
                   <WordRotate
-                    words={["Web Apps", "UI Systems", "Product Design","Graphic Design","Full-Stack Development","Cloud Technologies","Machine Learning"]}
+                    words={["Web Apps", "UI Systems", "Product Design", "Graphic Design", "Full-Stack Development", "Cloud Technologies", "Machine Learning"]}
                     className="font-semibold text-white"
                   />
                 </div>
@@ -391,11 +394,10 @@ export default function HomePage() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`rounded-full border px-3 py-1 transition ${
-                    activeTab === tab
-                      ? "border-white/60 bg-white/20 text-white"
-                      : "border-white/15 bg-white/8 text-white/60 hover:border-white/30 hover:text-white"
-                  }`}
+                  className={`rounded-full border px-3 py-1 transition ${activeTab === tab
+                    ? "border-white/60 bg-white/20 text-white"
+                    : "border-white/15 bg-white/8 text-white/60 hover:border-white/30 hover:text-white"
+                    }`}
                 >
                   {tab === "projects" ? "Projects" : "Gallery"}
                 </button>
@@ -486,32 +488,32 @@ export default function HomePage() {
         </div>
       </main>
 
-        <Footer/>
+      <Footer />
 
-{/*      <footer className="relative z-10 mx-auto mt-6 flex max-w-6xl flex-col items-center gap-3 px-6 pb-24 text-center text-sm text-white/70">*/}
-{/*        <div className="h-px w-full max-w-4xl bg-white/10" />*/}
-{/*        <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.25em]">*/}
-{/*        <GradientText*/}
-{/*  colors={["#fd690c", "#d35101", "#ff893a", "#fdc19b"]}*/}
-{/*  animationSpeed={1}*/}
-{/*  showBorder={false}*/}
-{/*  className="custom-class"*/}
-{/*>*/}
-{/*  Your Best Technocract!*/}
-{/*</GradientText>*/}
-{/*</div>*/}
-{/*        <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.25em] text-white/60">*/}
-{/*          {["Projects", "About", "Contact"].map((item) => (*/}
-{/*            <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-white">*/}
-{/*              {item}*/}
-{/*            </a>*/}
-{/*          ))}*/}
-{/*        </div>*/}
-{/*        */}
-{/*        <p className="text-xs text-white/60">*/}
-{/*          &copy; {new Date().getFullYear()} Induwara Jayakody - Crafted with Next.js & Tailwind.*/}
-{/*        </p>*/}
-{/*      </footer>*/}
+      {/*      <footer className="relative z-10 mx-auto mt-6 flex max-w-6xl flex-col items-center gap-3 px-6 pb-24 text-center text-sm text-white/70">*/}
+      {/*        <div className="h-px w-full max-w-4xl bg-white/10" />*/}
+      {/*        <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.25em]">*/}
+      {/*        <GradientText*/}
+      {/*  colors={["#fd690c", "#d35101", "#ff893a", "#fdc19b"]}*/}
+      {/*  animationSpeed={1}*/}
+      {/*  showBorder={false}*/}
+      {/*  className="custom-class"*/}
+      {/*>*/}
+      {/*  Your Best Technocract!*/}
+      {/*</GradientText>*/}
+      {/*</div>*/}
+      {/*        <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.25em] text-white/60">*/}
+      {/*          {["Projects", "About", "Contact"].map((item) => (*/}
+      {/*            <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-white">*/}
+      {/*              {item}*/}
+      {/*            </a>*/}
+      {/*          ))}*/}
+      {/*        </div>*/}
+      {/*        */}
+      {/*        <p className="text-xs text-white/60">*/}
+      {/*          &copy; {new Date().getFullYear()} Induwara Jayakody - Crafted with Next.js & Tailwind.*/}
+      {/*        </p>*/}
+      {/*      </footer>*/}
       <Dock />
     </div>
   );
