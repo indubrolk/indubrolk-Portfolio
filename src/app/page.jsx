@@ -1,14 +1,14 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
-import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon, Menu, X, Maximize2 } from "lucide-react";
+import {FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight,InstagramIcon,TwitterIcon,FacebookIcon, Menu, X } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
+import ExpandableCard from "../components/ExpandableCard";
 import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
 import Footer from "@/components/Footer";
-import { toggleFullscreen } from "@/lib/toggleFullscreen";
 
 
 const menuIcons = [
@@ -121,11 +121,7 @@ const techStack = {
   tools: ["Git & GitHub", "VS Code", "Figma","WebStorm"],
 };
 
-const handleFullscreenClick = (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-  toggleFullscreen(event.currentTarget.closest("[data-card]"));
-};
+
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("projects");
@@ -215,7 +211,7 @@ export default function HomePage() {
         </div>
       </nav>
 
-      <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-28 pb-32">
+      <main id="home" className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-28 pb-32">
         
         {/* <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {desktopIcons.map((item) => (
@@ -237,7 +233,7 @@ export default function HomePage() {
         <div className="grid gap-5 lg:grid-cols-1">
           <DesktopWindow className="lg:col-span-2">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div className="space-y-2" id="home">
+              <div className="space-y-2">
                 <p className="text-xl font-mono uppercase tracking-[0.35em] text-slate-300">
                   Hi, I&apos;m
                 </p>
@@ -409,7 +405,7 @@ export default function HomePage() {
             {activeTab === "projects" ? (
               <div className="grid gap-4 sm:grid-cols-2">
                 {projects.map((project) => (
-                  <div key={project.title} className="relative" data-card>
+                  <ExpandableCard key={project.title}>
                     <button
                       type="button"
                       onClick={() => window.open(project.link, "_blank", "noopener,noreferrer")}
@@ -428,35 +424,16 @@ export default function HomePage() {
                         {project.tech}
                       </p>
                     </button>
-                    <button
-                      type="button"
-                      onClick={handleFullscreenClick}
-                      className="absolute right-3 top-3 z-10 rounded-full border border-white/20 bg-black/40 p-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-                      aria-label="Toggle full screen"
-                      title="Toggle full screen"
-                    >
-                      <Maximize2 className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
+                  </ExpandableCard>
                 ))}
               </div>
             ) : (
               <div className="grid gap-4 sm:grid-cols-2">
                 {galleryItems.map((item) => (
-                  <div
+                  <ExpandableCard
                     key={item.title}
-                    data-card
-                    className={`group relative flex flex-col gap-3 rounded-3xl border border-white/15 bg-gradient-to-br ${item.accent} backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/20`}
+                    className={`group flex flex-col gap-3 rounded-3xl border border-white/15 bg-gradient-to-br ${item.accent} backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/20`}
                   >
-                    <button
-                      type="button"
-                      onClick={handleFullscreenClick}
-                      className="absolute right-3 top-3 z-10 rounded-full border border-white/20 bg-black/40 p-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-                      aria-label="Toggle full screen"
-                      title="Toggle full screen"
-                    >
-                      <Maximize2 className="h-3.5 w-3.5" />
-                    </button>
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <h3 className="text-base font-semibold text-white">{item.title}</h3>
@@ -467,7 +444,7 @@ export default function HomePage() {
                       </span>
                     </div>
                     <p className="text-[12px] uppercase tracking-wide text-white/70">Snapshots &amp; Media</p>
-                  </div>
+                  </ExpandableCard>
                 ))}
               </div>
             )}
@@ -484,7 +461,7 @@ export default function HomePage() {
               </p>
               <div className="space-y-2 text-sm text-slate-100">
                 {contactItems.map((item) => (
-                  <div key={item.href} className="relative" data-card>
+                  <ExpandableCard key={item.href}>
                     <button
                       type="button"
                       onClick={() => window.open(item.href, "_blank", "noopener,noreferrer")}
@@ -501,16 +478,7 @@ export default function HomePage() {
                       </div>
                       <ArrowUpRight className="h-4 w-4 text-white/60 transition group-hover:text-white" />
                     </button>
-                    <button
-                      type="button"
-                      onClick={handleFullscreenClick}
-                      className="absolute right-3 top-3 z-10 rounded-full border border-white/20 bg-black/40 p-1.5 text-white/90 backdrop-blur-md transition hover:bg-black/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-                      aria-label="Toggle full screen"
-                      title="Toggle full screen"
-                    >
-                      <Maximize2 className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
+                  </ExpandableCard>
                 ))}
               </div>
             </div>

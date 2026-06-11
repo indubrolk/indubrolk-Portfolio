@@ -180,38 +180,42 @@ export const Card = ({
         ? createPortal(
           <AnimatePresence>
             {open && (
-              <div className="fixed inset-0 z-50 overflow-y-auto">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg" />
-                <div className="flex min-h-screen items-center justify-center p-4 md:p-10">
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    ref={containerRef}
-                    layoutId={layout ? `card-${card.title}` : undefined}
-                    className="relative z-[60] w-full max-w-5xl rounded-3xl bg-white p-4 font-sans shadow-2xl md:p-10 dark:bg-neutral-900">
-                    <button
-                      className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-black text-white shadow-lg transition hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 dark:bg-white dark:text-neutral-900"
-                      onClick={handleClose}>
-                      <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
-                    </button>
-                    <motion.p
-                      layoutId={layout ? `category-${card.title}` : undefined}
-                      className="text-base font-medium text-black dark:text-white">
-                      {card.category}
-                    </motion.p>
-                    <motion.p
-                      layoutId={layout ? `title-${card.title}` : undefined}
-                      className="mt-4 text-2xl font-semibold text-neutral-700 md:text-5xl dark:text-white">
-                      {card.title}
-                    </motion.p>
-                    <div className="py-10">{card.content}</div>
-                  </motion.div>
+              <div className="card-modal-overlay" onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}>
+                {/* Bokeh particles */}
+                <div className="bokeh-container" aria-hidden="true">
+                  <div className="bokeh-circle bokeh-1" />
+                  <div className="bokeh-circle bokeh-2" />
+                  <div className="bokeh-circle bokeh-3" />
+                  <div className="bokeh-circle bokeh-4" />
+                  <div className="bokeh-circle bokeh-5" />
+                  <div className="bokeh-circle bokeh-6" />
+                  <div className="bokeh-circle bokeh-7" />
+                  <div className="bokeh-circle bokeh-8" />
                 </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  ref={containerRef}
+                  layoutId={layout ? `card-${card.title}` : undefined}
+                  className="card-modal-content relative z-[60] w-full max-w-5xl rounded-3xl bg-white/8 p-4 font-sans md:p-10">
+                  <button
+                    className="card-modal-close"
+                    onClick={handleClose}>
+                    <IconX className="h-5 w-5" />
+                  </button>
+                  <motion.p
+                    layoutId={layout ? `category-${card.title}` : undefined}
+                    className="text-base font-medium text-white">
+                    {card.category}
+                  </motion.p>
+                  <motion.p
+                    layoutId={layout ? `title-${card.title}` : undefined}
+                    className="mt-4 text-2xl font-semibold text-white md:text-5xl">
+                    {card.title}
+                  </motion.p>
+                  <div className="py-10">{card.content}</div>
+                </motion.div>
               </div>
             )}
           </AnimatePresence>,

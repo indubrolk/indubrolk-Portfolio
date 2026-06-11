@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 // import AppShell from "../components/AppShell";
 import { Preloader } from "../components/Preloader";
-import CursorGlow from "../components/CursorGlow";
+import NeonCursor from "../components/NeonCursor";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CursorGlow />
+        <NeonCursor />
         <Preloader>{children}</Preloader>
       </body>
     </html>

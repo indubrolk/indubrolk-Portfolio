@@ -43,6 +43,10 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   background-color: #05070f;
@@ -55,6 +59,15 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Offset anchor targets so they aren't hidden behind the fixed navbar */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+#home {
+  scroll-margin-top: 0;
 }
 
 a {
@@ -148,7 +161,234 @@ a {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ── Card Modal Overlay ────────────────────────────────────────── */
+.card-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(2, 4, 12, 0.82);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  animation: modal-fade-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.card-modal-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 960px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  box-shadow:
+    0 30px 90px -20px rgba(0, 0, 0, 0.7),
+    0 0 60px -10px rgba(99, 102, 241, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 2rem 2.25rem;
+  animation: modal-card-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.card-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+.card-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card-modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Bokeh Particles ───────────────────────────────────────────── */
+.bokeh-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bokeh-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0;
+  animation: bokeh-float 8s ease-in-out infinite, bokeh-appear 0.6s ease-out forwards;
+}
+
+.bokeh-1 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.6), transparent 70%);
+  top: 8%;
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 8s, 0.4s;
+}
+
+.bokeh-2 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(220, 220, 220, 0.55), transparent 70%);
+  top: 55%;
+  right: 6%;
+  animation-delay: 0.8s;
+  animation-duration: 10s, 0.5s;
+}
+
+.bokeh-3 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.5), transparent 70%);
+  bottom: 10%;
+  left: 12%;
+  animation-delay: 1.5s;
+  animation-duration: 12s, 0.6s;
+}
+
+.bokeh-4 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(201, 201, 201, 0.6), transparent 70%);
+  top: 20%;
+  right: 20%;
+  animation-delay: 0.3s;
+  animation-duration: 7s, 0.35s;
+}
+
+.bokeh-5 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(213, 213, 213, 0.45), transparent 70%);
+  bottom: 25%;
+  right: 3%;
+  animation-delay: 2s;
+  animation-duration: 9s, 0.7s;
+}
+
+.bokeh-6 {
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.5), transparent 70%);
+  top: 5%;
+  right: 35%;
+  animation-delay: 1.2s;
+  animation-duration: 11s, 0.55s;
+}
+
+.bokeh-7 {
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(232, 121, 249, 0.45), transparent 70%);
+  bottom: 5%;
+  left: 35%;
+  animation-delay: 0.6s;
+  animation-duration: 13s, 0.45s;
+}
+
+.bokeh-8 {
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.55), transparent 70%);
+  top: 40%;
+  left: 3%;
+  animation-delay: 1.8s;
+  animation-duration: 6s, 0.65s;
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────── */
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-card-in {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes bokeh-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bokeh-float {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(25px, -30px) scale(1.12);
+  }
+
+  50% {
+    transform: translate(-18px, 20px) scale(0.9);
+  }
+
+  75% {
+    transform: translate(14px, -14px) scale(1.08);
   }
 }
