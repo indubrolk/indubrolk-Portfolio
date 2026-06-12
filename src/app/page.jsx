@@ -467,9 +467,9 @@ export default function HomePage() {
                     <button
                       type="button"
                       onClick={() => window.open(item.href, "_blank", "noopener,noreferrer")}
-                      className="group flex w-full items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/14"
+                      className="group flex w-full items-center justify-between rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-5 py-4 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/14"
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-4 text-left">
                         <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white">
                           <item.icon className="h-5 w-5" />
                         </span>
