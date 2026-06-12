@@ -5,7 +5,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999;
+  z-index: 99999;
 }
 
 .cursor-main {
@@ -18,7 +18,7 @@
   border-radius: 50%;
   pointer-events: none;
   box-shadow: 0 0 10px #e8e7e7, 0 0 20px #fff;
-  z-index: 10001;
+  z-index: 100001;
 }
 
 .cursor-trail {
@@ -30,7 +30,7 @@
   border: 2px solid rgb(255, 255, 255);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 100000;
   box-sizing: border-box;
 }
 
@@ -43,5 +43,5 @@
   background: radial-gradient(circle, rgba(101, 101, 101, 0.4) 0%, rgba(236, 101, 23, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999;
 }
