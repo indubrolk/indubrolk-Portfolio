@@ -10,7 +10,6 @@ import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
 import Footer from "@/components/Footer";
 
-
 const menuIcons = [
   { label: "Home", href: "#home", icon: Home },
   { label: "Projects", href: "#projects", icon: FolderGit2 },
@@ -270,12 +269,12 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative mx-auto h-100 w-100 shrink-0 overflow-hidden">
+              <div className="relative mx-auto h-64 w-64 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-[400px] lg:w-[400px] shrink-0 overflow-hidden">
                 <Image
                   src="/profile pic2.png"
                   alt="Induwara Jayakody"
                   fill
-                  sizes="224px"
+                  sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 400px"
                   className="object-cover"
                   priority
                 />
