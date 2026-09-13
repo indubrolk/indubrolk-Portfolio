@@ -9,6 +9,7 @@ import ExpandableCard from "../components/ExpandableCard";
 import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
 import Footer from "@/components/Footer";
+import TechStackMarquee from "@/components/TechStackMarquee";
 
 const menuIcons = [
   { label: "Home", href: "#home", icon: Home },
@@ -233,7 +234,7 @@ export default function HomePage() {
         </section> */}
 
         <div className="grid gap-5 lg:grid-cols-1">
-          <DesktopWindow className="lg:col-span-2">
+          <DesktopWindow>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-2">
                 <p className="text-xl font-mono uppercase tracking-[0.35em] text-slate-300">
@@ -337,50 +338,15 @@ export default function HomePage() {
             </div>
           </DesktopWindow>
 
+
+
           <DesktopWindow>
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
                 <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Tech</span>
                 <span className="text-white/50">Stack</span>
               </div>
-
-              <div className="grid gap-3 text-sm text-slate-200 sm:grid-cols-1">
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
-                  <p className="text-[11px] uppercase tracking-wide text-white/60">Frontend</p>
-                  <ul className="mt-2 space-y-1">
-                    {techStack.frontend.map((item) => (
-                      <li key={item} className="flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
-                  <p className="text-[11px] uppercase tracking-wide text-white/60">Backend</p>
-                  <ul className="mt-2 space-y-1">
-                    {techStack.backend.map((item) => (
-                      <li key={item} className="flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4 sm:col-span-2" data-card>
-                  <p className="text-[11px] uppercase tracking-wide text-white/60">Tools</p>
-                  <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
-                    {techStack.tools.map((item) => (
-                      <li key={item} className="flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <TechStackMarquee />
             </div>
           </DesktopWindow>
         </div>
@@ -485,7 +451,7 @@ export default function HomePage() {
             </div>
           </DesktopWindow>
         </div>
-      </main>
+      </main >
 
       <Footer />
 
@@ -514,6 +480,6 @@ export default function HomePage() {
       {/*        </p>*/}
       {/*      </footer>*/}
       <Dock />
-    </div>
+    </div >
   );
 }

@@ -19,6 +19,7 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "tailwind-merge": "^3.4.0",
+    "tech-stack-icons": "^3.7.1",
     "three": "^0.181.1"
   },
   "devDependencies": {
