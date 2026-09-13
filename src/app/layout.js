@@ -21,6 +21,9 @@ export const metadata = {
     template: "%s | indu brolk",
   },
   description: "Hello! I'm Chamod Induwara, a passionate tech enthusiast, YouTuber, Tech Article Writer and IT undergraduate at the Sabaragamuwa University of Sri Lanka.",
+  verification: {
+    google: "google-site-verification=LtpvCVE4FxobYqbJYSPIwovqCNs50imfhvChsiPoi9M",
+  },
   keywords: ["Induwara Jayakody", "indu brolk", "Tech Enthusiast", "YouTuber", "Software Developer", "Sri Lanka", "React", "Next.js", "FullStack Developer"],
   authors: [{ name: "Induwara Jayakody", url: "https://www.indubrolk.tech" }],
   creator: "Induwara Jayakody",
