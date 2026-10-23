@@ -10,6 +10,7 @@ import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
 import Footer from "@/components/Footer";
 import TechStackMarquee from "@/components/TechStackMarquee";
+import AwardsMarquee from "@/components/AwardsMarquee";
 
 const menuIcons = [
   { label: "Home", href: "#home", icon: Home },
@@ -33,6 +34,7 @@ const projects = [
       "E-commerce-style experience with responsive product browsing and a clean, minimal interface.",
     tech: "React / Vite / Tailwind",
     link: "https://github.com/indubrolk/SUSARAElectronics",
+    image: "/susara.png",
   },
   {
     title: "Study Companion App",
@@ -40,6 +42,7 @@ const projects = [
       "This project helps students improve their productivity by providing tools.",
     tech: "React Js / Ballerina / Rest API",
     link: "https://github.com/indubrolk/Study-Companion-Bot",
+    image: "/arti2.jpg",
   },
   {
     title: "Simple ML Chat Bot",
@@ -47,6 +50,7 @@ const projects = [
       "Simple chat-bot using python",
     tech: "Python / Machine Learning ",
     link: "https://github.com/indubrolk/Simple-ML-chatbot#",
+    image: "/arti3.jpg",
   },
 ];
 
@@ -115,6 +119,8 @@ const contactItems = [
   },
 ];
 
+
+
 const techStack = {
   frontend: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
   backend: ["Node.js", "REST APIs", "Ballerina"],
@@ -128,7 +134,7 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen overflow-hidden text-slate-50">
+    <div className="relative min-h-screen w-full max-w-[100vw] overflow-x-hidden overflow-y-auto text-slate-50">
       <div className="pointer-events-none absolute inset-0 opacity-70">
         <div className="desktops-grid absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-black/50" />
@@ -353,15 +359,15 @@ export default function HomePage() {
 
         <div className="grid gap-5 lg:grid-cols-3" id="projects">
           <DesktopWindow className="lg:col-span-2">
-            <div className="mb-3 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+            <div className="mb-4 flex flex-wrap items-center gap-5 text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
               {["projects", "gallery"].map((tab) => (
                 <button
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`rounded-full border px-3 py-1 transition ${activeTab === tab
-                    ? "border-white/60 bg-white/20 text-white"
-                    : "border-white/15 bg-white/8 text-white/60 hover:border-white/30 hover:text-white"
+                  className={`transition ${activeTab === tab
+                    ? "text-white"
+                    : "text-white/60 hover:text-white"
                     }`}
                 >
                   {tab === "projects" ? "Projects" : "Gallery"}
@@ -370,86 +376,112 @@ export default function HomePage() {
             </div>
 
             {activeTab === "projects" ? (
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-2">
                 {projects.map((project) => (
                   <ExpandableCard key={project.title}>
-                    <button
-                      type="button"
-                      onClick={() => window.open(project.link, "_blank", "noopener,noreferrer")}
-                      className="group flex w-full flex-col gap-2 rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 via-white/6 to-white/4 backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/15"
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex w-full max-w-full overflow-hidden flex-col gap-4 rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 via-white/6 to-white/4 backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/15"
                     >
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <h3 className="text-base font-semibold text-white">{project.title}</h3>
-                          <p className="text-sm text-slate-200">{project.description}</p>
+                      {project.image && (
+                        <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-2xl bg-white/5">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition duration-500 group-hover:scale-105"
+                          />
                         </div>
-                        <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] text-white/80">
-                          Open
-                        </span>
+                      )}
+                      <div className="flex flex-col gap-2 w-full min-w-0">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="min-w-0">
+                            <h3 className="text-base font-semibold text-white truncate">{project.title}</h3>
+                            <p className="text-sm text-slate-300 mt-1 line-clamp-2 break-words">{project.description}</p>
+                          </div>
+                          <span className="shrink-0 rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] text-white/80">
+                            Open
+                          </span>
+                        </div>
+                        <p className="text-[12px] font-medium uppercase tracking-wide text-sky-200/90 mt-1 truncate">
+                          {project.tech}
+                        </p>
                       </div>
-                      <p className="text-[12px] font-medium uppercase tracking-wide text-sky-200/90">
-                        {project.tech}
-                      </p>
-                    </button>
+                    </a>
                   </ExpandableCard>
                 ))}
               </div>
             ) : (
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-2">
                 {galleryItems.map((item) => (
                   <ExpandableCard
                     key={item.title}
                     className={`group flex flex-col gap-3 rounded-3xl border border-white/15 bg-gradient-to-br ${item.accent} backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/20`}
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                        <p className="text-sm text-slate-200">{item.description}</p>
+                    <div className="flex items-start justify-between gap-3 min-w-0">
+                      <div className="min-w-0">
+                        <h3 className="text-base font-semibold text-white truncate">{item.title}</h3>
+                        <p className="text-sm text-slate-200 line-clamp-2 break-words">{item.description}</p>
                       </div>
-                      <span className="rounded-full border border-white/20 bg-white/15 px-2 py-1 text-[11px] text-white/80">
+                      <span className="shrink-0 rounded-full border border-white/20 bg-white/15 px-2 py-1 text-[11px] text-white/80">
                         {item.tag}
                       </span>
                     </div>
-                    <p className="text-[12px] uppercase tracking-wide text-white/70">Snapshots &amp; Media</p>
+                    <p className="text-[12px] uppercase tracking-wide text-white/70 truncate">Snapshots &amp; Media</p>
                   </ExpandableCard>
                 ))}
               </div>
             )}
           </DesktopWindow>
 
-          <DesktopWindow id="contact">
-            <div className="space-y-3">
-              <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Contact</span>
-                <span className="text-white/50">Reach Out</span>
-              </div>
-              <p className="text-sm text-slate-200">
-                Want to collaborate, ask a question, or just say hi? I&apos;m always open to a quick chat.
-              </p>
-              <div className="space-y-2 text-sm text-slate-100">
-                {contactItems.map((item) => (
-                  <ExpandableCard key={item.href}>
-                    <button
-                      type="button"
-                      onClick={() => window.open(item.href, "_blank", "noopener,noreferrer")}
-                      className="group flex w-full items-center justify-between rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-5 py-4 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/14"
-                    >
-                      <div className="flex items-center gap-4 text-left">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white">
-                          <item.icon className="h-5 w-5" />
-                        </span>
-                        <div>
-                          <p className="text-[11px] uppercase tracking-wide text-white/60">{item.label}</p>
-                          <p className="font-semibold text-white group-hover:text-sky-200">{item.value}</p>
+          <div className="flex flex-col gap-5">
+            <DesktopWindow id="contact">
+              <div className="space-y-3">
+                <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                  <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Contact</span>
+                  <span className="text-white/50">Reach Out</span>
+                </div>
+                <p className="text-sm text-slate-200">
+                  Want to collaborate, ask a question, or just say hi? I&apos;m always open to a quick chat.
+                </p>
+                <div className="space-y-2 text-sm text-slate-100">
+                  {contactItems.map((item) => (
+                    <ExpandableCard key={item.href}>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex w-full max-w-full overflow-hidden items-center justify-between rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-2.5 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/14"
+                      >
+                        <div className="flex items-center gap-3 text-left min-w-0">
+                          <span className="shrink-0 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white">
+                            <item.icon className="h-4 w-4" />
+                          </span>
+                          <div className="min-w-0">
+                            <p className="text-[10px] uppercase tracking-wide text-white/60 truncate">{item.label}</p>
+                            <p className="text-sm font-semibold text-white group-hover:text-sky-200 truncate">{item.value}</p>
+                          </div>
                         </div>
-                      </div>
-                      <ArrowUpRight className="h-4 w-4 text-white/60 transition group-hover:text-white" />
-                    </button>
-                  </ExpandableCard>
-                ))}
+                        <ArrowUpRight className="shrink-0 h-4 w-4 text-white/60 transition group-hover:text-white" />
+                      </a>
+                    </ExpandableCard>
+                  ))}
+                </div>
               </div>
-            </div>
-          </DesktopWindow>
+            </DesktopWindow>
+
+            <DesktopWindow id="certifications">
+              <div className="space-y-3 overflow-hidden">
+                <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                  <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Awards</span>
+                  <span className="text-white/50">& Certs</span>
+                </div>
+                <AwardsMarquee />
+              </div>
+            </DesktopWindow>
+          </div>
         </div>
       </main >
 
