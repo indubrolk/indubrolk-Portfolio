@@ -112,7 +112,7 @@ export default function TechStackMarquee() {
   const doubled = [...techItems, ...techItems];
 
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl">
+    <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
       <div className="overflow-hidden">
         <div ref={scrollRef} className="flex w-max gap-4 py-3 px-2" style={{ willChange: "transform" }}>
           {doubled.map((item, idx) => (

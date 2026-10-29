@@ -10,7 +10,7 @@ import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
 import Footer from "@/components/Footer";
 import TechStackMarquee from "@/components/TechStackMarquee";
-import AwardsMarquee from "@/components/AwardsMarquee";
+import AwardsMarquee, { AwardsModalView } from "@/components/AwardsMarquee";
 
 const menuIcons = [
   { label: "Home", href: "#home", icon: Home },
@@ -37,12 +37,12 @@ const projects = [
     image: "/susara.png",
   },
   {
-    title: "Study Companion App",
+    title: "UniLink-URMS",
     description:
       "This project helps students improve their productivity by providing tools.",
-    tech: "React Js / Ballerina / Rest API",
-    link: "https://github.com/indubrolk/Study-Companion-Bot",
-    image: "/arti2.jpg",
+    tech: "React Js / Next Js",
+    link: "https://github.com/indubrolk/Capstone---URMS",
+    image: "/unilink.png",
   },
   {
     title: "Simple ML Chat Bot",
@@ -315,21 +315,21 @@ export default function HomePage() {
                 I enjoy collaborating with teams, sketching interfaces, and building dependable experiences.
               </p>
               <div className="grid grid-cols-2 gap-3 text-sm text-slate-200">
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Role</p>
                   <WordRotate
                     words={["Developer", "Designer", "Content Creator"]}
                     className="font-semibold text-white"
                   />
                 </div>
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Location</p>
                   <WordRotate
                     words={["Kurunegala", "Sri Lanka", "Remote-friendly"]}
                     className="font-semibold text-white"
                   />
                 </div>
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-4" data-card>
+                <div className="relative rounded-2xl border border-white/15 bg-white/10 px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Focus</p>
                   <WordRotate
                     words={["Web Apps", "UI Systems", "Product Design", "Graphic Design", "Full-Stack Development", "Cloud Technologies", "Machine Learning"]}
@@ -383,7 +383,7 @@ export default function HomePage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex w-full max-w-full overflow-hidden flex-col gap-4 rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 via-white/6 to-white/4 backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/15"
+                      className="group flex w-full max-w-full overflow-hidden flex-col gap-4 rounded-3xl border border-white/15 bg-white/[0.06] p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.1]"
                     >
                       {project.image && (
                         <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-2xl bg-white/5">
@@ -418,7 +418,7 @@ export default function HomePage() {
                 {galleryItems.map((item) => (
                   <ExpandableCard
                     key={item.title}
-                    className={`group flex flex-col gap-3 rounded-3xl border border-white/15 bg-gradient-to-br ${item.accent} backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/20`}
+                    className={`group flex flex-col gap-3 rounded-3xl border border-white/15 bg-gradient-to-br ${item.accent} p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:from-white/20`}
                   >
                     <div className="flex items-start justify-between gap-3 min-w-0">
                       <div className="min-w-0">
@@ -453,7 +453,7 @@ export default function HomePage() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex w-full max-w-full overflow-hidden items-center justify-between rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-4 py-2.5 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/14"
+                        className="group flex w-full max-w-full overflow-hidden items-center justify-between rounded-2xl border border-white/15 bg-white/[0.08] px-4 py-2.5 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.14]"
                       >
                         <div className="flex items-center gap-3 text-left min-w-0">
                           <span className="shrink-0 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white">
@@ -472,7 +472,7 @@ export default function HomePage() {
               </div>
             </DesktopWindow>
 
-            <DesktopWindow id="certifications">
+            <DesktopWindow id="certifications" modalContent={<AwardsModalView />}>
               <div className="space-y-3 overflow-hidden">
                 <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
                   <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Awards</span>

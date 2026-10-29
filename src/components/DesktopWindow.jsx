@@ -5,7 +5,7 @@ import { Maximize2 } from "lucide-react";
 import CardModal from "./CardModal";
 import ColorBends from "./ColorBends";
 
-export default function DesktopWindow({ children, className = "", ...rest }) {
+export default function DesktopWindow({ children, modalContent, className = "", ...rest }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -42,7 +42,7 @@ export default function DesktopWindow({ children, className = "", ...rest }) {
       </div>
 
       <CardModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        {children}
+        {modalContent || children}
       </CardModal>
     </>
   );
