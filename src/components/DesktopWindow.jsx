@@ -1,19 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { Maximize2 } from "lucide-react";
 import CardModal from "./CardModal";
 import ColorBends from "./ColorBends";
 
-export default function DesktopWindow({ children, modalContent, className = "", ...rest }) {
+export default function DesktopWindow({ children, modalContent, className = "", scrollFade = false, ...rest }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const cardRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    // Keep cards hidden near the viewport edges before revealing them.
+    offset: ["start 95%", "end 15%"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0.92, 1, 1, 0.92]);
+  const y = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [36, 0, 0, -36]);
 
   return (
     <>
-      <div
+      <motion.div
         {...rest}
+        ref={cardRef}
+        style={scrollFade && !reduceMotion ? { opacity, scale, y } : undefined}
         data-card
-        className={`relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-3xl shadow-[0_22px_70px_-32px_rgba(0,0,0,0.65)] ${className}`}
+        className={`relative min-w-0 w-full max-w-full overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-3xl shadow-[0_22px_70px_-32px_rgba(0,0,0,0.65)] ${className}`}
       >
         <button
           type="button"
@@ -38,8 +51,8 @@ export default function DesktopWindow({ children, modalContent, className = "", 
           noise={0.02}
           scale={1}
         /> */}
-        <div className="relative p-6 sm:p-8">{children}</div>
-      </div>
+        <div className="relative min-w-0 p-4 pt-14 sm:p-8">{children}</div>
+      </motion.div>
 
       <CardModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         {modalContent || children}

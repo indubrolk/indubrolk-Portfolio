@@ -72,6 +72,14 @@ body {
 
 a {
   color: inherit;
+}
+
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active,
+a * {
   text-decoration: none;
 }
 
@@ -86,6 +94,91 @@ a {
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 160px 160px, 160px 160px;
   mask-image: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.25), transparent 65%);
+}
+
+.navigation-dock-item {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 9999px;
+  transition: color 180ms ease;
+}
+
+.navigation-dock-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 180ms ease, box-shadow 180ms ease;
+}
+
+.navigation-dock-glyph {
+  display: block;
+  flex-shrink: 0;
+}
+
+.navigation-dock-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.navigation-dock-label {
+  position: absolute;
+  bottom: calc(100% + 28px);
+  left: 50%;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(20, 20, 24, 0.95);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 4px);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+}
+
+.navigation-dock-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 4px;
+}
+
+.navigation-dock-item:focus-visible,
+.navigation-dock-item:hover {
+  color: white;
+  z-index: 2;
+}
+
+.navigation-dock-item:is(:hover, :focus-visible) .navigation-dock-icon {
+  background: rgba(64, 58, 56, 0.95);
+  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.6);
+}
+
+.navigation-dock-item:is(:hover, :focus-visible) .navigation-dock-label {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-dock-item,
+  .navigation-dock-icon,
+  .navigation-dock-icon svg,
+  .navigation-dock-label {
+    transition: none;
+  }
 }
 
 :root {
@@ -160,11 +253,16 @@ a {
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    cursor: none !important;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
   }
 }
 

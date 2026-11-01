@@ -70,65 +70,118 @@ const techItems = [
 ];
 
 export default function TechStackMarquee() {
-  const scrollRef = useRef(null);
+  const viewportRef = useRef(null);
+  const trackRef = useRef(null);
 
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
+    const viewport = viewportRef.current;
+    const track = trackRef.current;
+    if (!viewport || !track) return;
 
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let animationId;
-    let offset = 0;
-    const speed = 0.5; // px per frame
+    let previousTime = 0;
+    let offset = viewport.scrollLeft;
+    let hovered = false;
+    let focused = false;
+    let pointerDown = false;
+    let drag = null;
+    let resumeAfter = 0;
 
-    const step = () => {
-      offset += speed;
-      // reset when we've scrolled past the first set
-      const halfWidth = el.scrollWidth / 2;
-      if (offset >= halfWidth) offset = 0;
-      el.style.transform = `translateX(-${offset}px)`;
+    const step = (time) => {
+      const elapsed = previousTime ? Math.min(time - previousTime, 50) : 0;
+      previousTime = time;
+      if (hovered || focused || pointerDown || time < resumeAfter || reducedMotion.matches) {
+        offset = viewport.scrollLeft;
+      } else {
+        const loopWidth = track.scrollWidth / 2;
+        offset = (offset + elapsed * 0.03) % loopWidth;
+        viewport.scrollLeft = offset;
+      }
       animationId = requestAnimationFrame(step);
     };
 
+    const enter = (event) => { if (event.pointerType === "mouse") hovered = true; };
+    const leave = () => { hovered = false; };
+    const focus = () => { focused = true; };
+    const blur = (event) => { focused = viewport.contains(event.relatedTarget); };
+    const down = (event) => {
+      if (event.button !== 0) return;
+      pointerDown = true;
+      if (event.pointerType !== "mouse") return;
+      drag = { id: event.pointerId, x: event.clientX, scrollLeft: viewport.scrollLeft };
+      viewport.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    };
+    const move = (event) => {
+      if (!drag || event.pointerId !== drag.id) return;
+      viewport.scrollLeft = drag.scrollLeft - (event.clientX - drag.x);
+      offset = viewport.scrollLeft;
+    };
+    const end = (event) => {
+      pointerDown = false;
+      offset = viewport.scrollLeft;
+      resumeAfter = performance.now() + 1500;
+      if (!drag || event.pointerId !== drag.id) return;
+      drag = null;
+      if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+      hovered = viewport.matches(":hover");
+    };
+    const wheel = (event) => {
+      if (event.ctrlKey) return;
+      const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? viewport.clientWidth : 1;
+      const next = Math.max(0, Math.min(viewport.scrollWidth - viewport.clientWidth, viewport.scrollLeft + delta * unit));
+      if (next === viewport.scrollLeft) return;
+      event.preventDefault();
+      viewport.scrollLeft = next;
+      offset = viewport.scrollLeft;
+      resumeAfter = performance.now() + 1500;
+    };
+
+    const listeners = [
+      ["pointerenter", enter], ["pointerleave", leave],
+      ["focusin", focus], ["focusout", blur],
+      ["pointerdown", down], ["pointermove", move],
+      ["pointerup", end], ["pointercancel", end], ["lostpointercapture", end],
+    ];
+    listeners.forEach(([name, handler]) => viewport.addEventListener(name, handler));
+    viewport.addEventListener("wheel", wheel, { passive: false });
     animationId = requestAnimationFrame(step);
-
-    // pause on hover
-    const parent = el.parentElement;
-    const pause = () => cancelAnimationFrame(animationId);
-    const resume = () => {
-      animationId = requestAnimationFrame(step);
-    };
-
-    parent.addEventListener("mouseenter", pause);
-    parent.addEventListener("mouseleave", resume);
 
     return () => {
       cancelAnimationFrame(animationId);
-      parent.removeEventListener("mouseenter", pause);
-      parent.removeEventListener("mouseleave", resume);
+      listeners.forEach(([name, handler]) => viewport.removeEventListener(name, handler));
+      viewport.removeEventListener("wheel", wheel);
     };
   }, []);
 
-  // Double the items for seamless loop
-  const doubled = [...techItems, ...techItems];
-
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
-      <div className="overflow-hidden">
-        <div ref={scrollRef} className="flex w-max gap-4 py-3 px-2" style={{ willChange: "transform" }}>
-          {doubled.map((item, idx) => (
-            <div
-              key={`${item.name}-${idx}`}
-              className="group flex flex-col items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.06] px-5 py-2.5 transition-all duration-300 hover:border-white/25 hover:bg-white/[0.1] hover:scale-105 min-w-[100px]"
-            >
-              <div className="text-white/80 transition-colors duration-300 group-hover:text-white">
-                {item.iconName ? <StackIcon name={item.iconName} className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" /> : <item.Icon />}
+    <div
+      ref={viewportRef}
+      role="region"
+      aria-label="Tech stack. Drag or scroll to explore technologies."
+      tabIndex={0}
+      className="relative w-full overflow-x-auto overscroll-x-contain rounded-2xl border border-white/10 bg-white/[0.04] select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+    >
+      <div ref={trackRef} className="flex w-max py-3">
+        {[0, 1].map((copy) => (
+          <div key={copy} aria-hidden={copy === 1 ? true : undefined} className="flex gap-4 pr-4">
+            {techItems.map((item) => (
+              <div
+                key={item.name}
+                className="group flex min-w-[100px] shrink-0 flex-col items-center justify-center gap-2 px-4 py-2.5"
+              >
+                <div className="text-white/80 transition-colors duration-300 group-hover:text-white">
+                  {item.iconName ? <StackIcon name={item.iconName} className="h-10 w-10 transition-transform duration-300 group-hover:scale-110" /> : <item.Icon />}
+                </div>
+                <span className="whitespace-nowrap text-xs font-medium text-white/60 transition-colors duration-300 group-hover:text-white/90">
+                  {item.name}
+                </span>
               </div>
-              <span className="text-xs font-medium text-white/60 transition-colors duration-300 group-hover:text-white/90 whitespace-nowrap">
-                {item.name}
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

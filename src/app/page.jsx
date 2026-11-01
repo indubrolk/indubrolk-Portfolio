@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { FileDown, FileText, FolderGit2, Github, Home, Linkedin, Mail, PlayCircle, User, ArrowUpRight, InstagramIcon, TwitterIcon, FacebookIcon, Menu, X } from "lucide-react";
 import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
+import NavigationDock from "../components/NavigationDock";
 import ExpandableCard from "../components/ExpandableCard";
 import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
@@ -132,6 +134,11 @@ const techStack = {
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("projects");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const logoOpacity = useTransform(scrollY, [24, 180], [1, 0]);
+  const logoY = useTransform(scrollY, [24, 180], [0, -16]);
+  const logoVisibility = useTransform(scrollY, (value) => value >= 180 ? "hidden" : "visible");
 
   return (
     <div className="relative min-h-screen w-full max-w-[100vw] overflow-x-hidden overflow-y-auto text-slate-50">
@@ -140,7 +147,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-black/50" />
       </div>
 
-      <nav className="fixed inset-x-0 top-0 z-20 px-4 pt-6">
+      <nav className="fixed inset-x-0 top-0 z-20 px-4 pt-6 md:pt-14">
         <div className="mx-auto flex max-w-5xl flex-col gap-3">
           <div className="flex items-center gap-3">
             {/* <a
@@ -148,7 +155,15 @@ export default function HomePage() {
               className="flex backdrop-blur-xl items-center gap-3 h-15 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/10"
             > */}
             {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl bg-white/5"> */}
-            <a href="#home" className="transition hover:opacity-80">
+            <motion.a
+              href="#home"
+              aria-label="Back to home"
+              style={{
+                opacity: reduceMotion ? 1 : logoOpacity,
+                y: reduceMotion ? 0 : logoY,
+                visibility: logoVisibility,
+              }}
+            >
               <Image
                 src="/indu2.png"
                 alt="Indu logo"
@@ -157,7 +172,7 @@ export default function HomePage() {
                 className="h-13 w-20 object-cover"
                 priority
               />
-            </a>
+            </motion.a>
             {/* </span> */}
             {/* <span className="leading-tight">
                 Indu
@@ -166,22 +181,7 @@ export default function HomePage() {
             {/* </a> */}
             {/*menu bar*/}
             <div className="flex flex-1 items-center justify-end gap-3 md:justify-center ">
-              <div className="hidden items-center backdrop-blur-xl gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 md:flex ">
-                {menuIcons.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    style={{ textDecoration: 'none' }}
-                    className="group relative flex h-11 items-center justify-center rounded-full px-2.5 text-base font-semibold text-white/80 no-underline transition-all duration-500 ease-out hover:bg-white/20 hover:text-white hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                    aria-label={item.label}
-                  >
-                    <item.icon className="h-6 w-6 shrink-0" />
-                    <span style={{ textDecoration: 'none' }} className="overflow-hidden whitespace-nowrap text-sm font-medium transition-all duration-500 ease-out max-w-0 opacity-0 group-hover:max-w-[100px] group-hover:ml-2 group-hover:opacity-100">
-                      {item.label}
-                    </span>
-                  </a>
-                ))}
-              </div>
+              <NavigationDock items={menuIcons} />
               <button
                 type="button"
                 className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:hidden"
@@ -220,7 +220,7 @@ export default function HomePage() {
         </div>
       </nav>
 
-      <main id="home" className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-28 pb-32">
+      <main id="home" className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-28 pb-32 md:pt-40">
 
         {/* <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {desktopIcons.map((item) => (
@@ -240,7 +240,7 @@ export default function HomePage() {
         </section> */}
 
         <div className="grid gap-5 lg:grid-cols-1">
-          <DesktopWindow>
+          <DesktopWindow scrollFade>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-2">
                 <p className="text-xl font-mono uppercase tracking-[0.35em] text-slate-300">
@@ -304,7 +304,7 @@ export default function HomePage() {
             </div>
           </DesktopWindow>
 
-          <DesktopWindow id="about">
+          <DesktopWindow scrollFade id="about">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
                 <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">About</span>
@@ -346,7 +346,7 @@ export default function HomePage() {
 
 
 
-          <DesktopWindow>
+          <DesktopWindow scrollFade>
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
                 <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Tech</span>
@@ -357,8 +357,8 @@ export default function HomePage() {
           </DesktopWindow>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3" id="projects">
-          <DesktopWindow className="lg:col-span-2">
+        <div className="grid min-w-0 grid-cols-1 gap-5 lg:grid-cols-3" id="projects">
+          <DesktopWindow scrollFade className="lg:col-span-2">
             <div className="mb-4 flex flex-wrap items-center gap-5 text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
               {["projects", "gallery"].map((tab) => (
                 <button
@@ -376,21 +376,22 @@ export default function HomePage() {
             </div>
 
             {activeTab === "projects" ? (
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
                 {projects.map((project) => (
                   <ExpandableCard key={project.title}>
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex w-full max-w-full overflow-hidden flex-col gap-4 rounded-3xl border border-white/15 bg-white/[0.06] p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.1]"
+                      className="group flex min-w-0 w-full max-w-full overflow-hidden flex-col gap-4 rounded-3xl border border-white/15 bg-white/[0.06] p-3 sm:p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.1]"
                     >
                       {project.image && (
-                        <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-2xl bg-white/5">
+                        <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-2xl bg-white/5 sm:aspect-auto sm:h-48">
                           <Image
                             src={project.image}
                             alt={project.title}
                             fill
+                            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 360px"
                             className="object-cover transition duration-500 group-hover:scale-105"
                           />
                         </div>
@@ -398,14 +399,14 @@ export default function HomePage() {
                       <div className="flex flex-col gap-2 w-full min-w-0">
                         <div className="flex items-start justify-between gap-3">
                           <div className="min-w-0">
-                            <h3 className="text-base font-semibold text-white truncate">{project.title}</h3>
-                            <p className="text-sm text-slate-300 mt-1 line-clamp-2 break-words">{project.description}</p>
+                            <h3 className="text-base font-semibold text-white break-words">{project.title}</h3>
+                            <p className="text-sm text-slate-300 mt-1 break-words sm:line-clamp-2">{project.description}</p>
                           </div>
                           <span className="shrink-0 rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] text-white/80">
                             Open
                           </span>
                         </div>
-                        <p className="text-[12px] font-medium uppercase tracking-wide text-sky-200/90 mt-1 truncate">
+                        <p className="text-[12px] font-medium uppercase tracking-wide text-sky-200/90 mt-1 break-words">
                           {project.tech}
                         </p>
                       </div>
@@ -414,7 +415,7 @@ export default function HomePage() {
                 ))}
               </div>
             ) : (
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
                 {galleryItems.map((item) => (
                   <ExpandableCard
                     key={item.title}
@@ -422,8 +423,8 @@ export default function HomePage() {
                   >
                     <div className="flex items-start justify-between gap-3 min-w-0">
                       <div className="min-w-0">
-                        <h3 className="text-base font-semibold text-white truncate">{item.title}</h3>
-                        <p className="text-sm text-slate-200 line-clamp-2 break-words">{item.description}</p>
+                        <h3 className="text-base font-semibold text-white break-words">{item.title}</h3>
+                        <p className="text-sm text-slate-200 break-words sm:line-clamp-2">{item.description}</p>
                       </div>
                       <span className="shrink-0 rounded-full border border-white/20 bg-white/15 px-2 py-1 text-[11px] text-white/80">
                         {item.tag}
@@ -436,8 +437,8 @@ export default function HomePage() {
             )}
           </DesktopWindow>
 
-          <div className="flex flex-col gap-5">
-            <DesktopWindow id="contact">
+          <div className="flex min-w-0 flex-col gap-5">
+            <DesktopWindow scrollFade id="contact">
               <div className="space-y-3">
                 <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
                   <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Contact</span>
@@ -453,15 +454,15 @@ export default function HomePage() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex w-full max-w-full overflow-hidden items-center justify-between rounded-2xl border border-white/15 bg-white/[0.08] px-4 py-2.5 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.14]"
+                        className="group flex min-w-0 w-full max-w-full items-center justify-between gap-2 rounded-2xl border border-white/15 bg-white/[0.08] px-3 py-3 sm:px-4 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.14]"
                       >
-                        <div className="flex items-center gap-3 text-left min-w-0">
+                        <div className="flex flex-1 items-center gap-2 sm:gap-3 text-left min-w-0">
                           <span className="shrink-0 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white">
                             <item.icon className="h-4 w-4" />
                           </span>
                           <div className="min-w-0">
                             <p className="text-[10px] uppercase tracking-wide text-white/60 truncate">{item.label}</p>
-                            <p className="text-sm font-semibold text-white group-hover:text-sky-200 truncate">{item.value}</p>
+                            <p className="text-sm font-semibold text-white group-hover:text-sky-200 [overflow-wrap:anywhere]">{item.value}</p>
                           </div>
                         </div>
                         <ArrowUpRight className="shrink-0 h-4 w-4 text-white/60 transition group-hover:text-white" />
@@ -472,7 +473,7 @@ export default function HomePage() {
               </div>
             </DesktopWindow>
 
-            <DesktopWindow id="certifications" modalContent={<AwardsModalView />}>
+            <DesktopWindow scrollFade id="certifications" modalContent={<AwardsModalView />}>
               <div className="space-y-3 overflow-hidden">
                 <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
                   <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Awards</span>

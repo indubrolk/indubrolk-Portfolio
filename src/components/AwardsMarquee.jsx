@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import StackIcon from "tech-stack-icons";
 import { Award, Search, Eye, ArrowLeft, ExternalLink, X } from "lucide-react";
 import CardModal from "./CardModal";
 
@@ -11,8 +12,9 @@ export const certifications = [
     name: "Foundations of Project Management",
     shortName: "System Admin & IT Infra",
     issuer: "Google",
+    issuerIcon: "google",
     year: "2026",
-    logo: "/arti1.jpg", // Replace with your actual certificate image
+    certificateImage: "/arti1.jpg", // Replace with your actual certificate image
     alt: "System Administration and IT Infrastructure Services Certificate",
   },
   {
@@ -20,8 +22,9 @@ export const certifications = [
     name: "Full Stack Development",
     shortName: "Full Stack Dev",
     issuer: "Meta",
+    issuerIcon: "meta",
     year: "2026",
-    logo: "/arti2.jpg", // Replace with your actual certificate image
+    certificateImage: "/arti2.jpg", // Replace with your actual certificate image
     alt: "Meta Full Stack Certificate",
   },
   {
@@ -29,8 +32,9 @@ export const certifications = [
     name: "Google Cloud Fundamentals: Core Infrastructure",
     shortName: "Google Cloud Core Infra",
     issuer: "Google",
+    issuerIcon: "google",
     year: "2026",
-    logo: "/arti3.jpg", // Replace with your actual certificate image
+    certificateImage: "/arti3.jpg", // Replace with your actual certificate image
     alt: "Google Cloud Fundamentals Certificate",
   },
   {
@@ -38,11 +42,20 @@ export const certifications = [
     name: "Foundations of Project Management",
     shortName: "Project Management",
     issuer: "Google",
+    issuerIcon: "google",
     year: "2025",
-    logo: "/PM certificate.jpeg", // Replace with your actual certificate image
+    certificateImage: "/PM certificate.jpeg",
     alt: "Foundations of Project Management Certificate",
   },
 ];
+
+function IssuerLogo({ cert, className = "h-12 w-12" }) {
+  return (
+    <span role="img" aria-label={`${cert.issuer} logo`} className={`inline-flex shrink-0 ${className}`}>
+      <StackIcon name={cert.issuerIcon} className="h-full w-full" />
+    </span>
+  );
+}
 
 export function CertificateViewerContent({ cert, onBack }) {
   if (!cert) return null;
@@ -71,7 +84,7 @@ export function CertificateViewerContent({ cert, onBack }) {
         </div>
 
         <a
-          href={cert.logo}
+          href={cert.certificateImage}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white/90 transition hover:border-white/30 hover:bg-white/20"
@@ -84,7 +97,7 @@ export function CertificateViewerContent({ cert, onBack }) {
       <div className="relative mx-auto flex h-[50vh] max-h-[520px] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-black/40 p-4">
         <div className="relative h-full w-full">
           <Image
-            src={cert.logo}
+            src={cert.certificateImage}
             alt={cert.alt}
             fill
             sizes="(max-width: 768px) 100vw, 800px"
@@ -173,16 +186,8 @@ export function AwardsModalView() {
               onClick={() => setSelectedCert(cert)}
               className="group flex flex-col gap-3 rounded-2xl border border-white/15 bg-white/[0.06] p-4 text-left transition hover:-translate-y-1 hover:border-white/30 hover:bg-white/[0.12]"
             >
-              <div className="relative h-40 w-full overflow-hidden rounded-xl border border-white/10 bg-black/30 p-2">
-                <div className="relative h-full w-full">
-                  <Image
-                    src={cert.logo}
-                    alt={cert.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 400px"
-                    className="object-contain opacity-90 transition duration-300 group-hover:scale-105 group-hover:opacity-100"
-                  />
-                </div>
+              <div className="relative flex h-40 w-full items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/30 p-4">
+                <IssuerLogo cert={cert} className="h-20 w-20 transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 backdrop-blur-[2px] transition duration-200 group-hover:opacity-100">
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-black/60 px-3 py-1.5 text-xs font-semibold text-white">
                     <Eye className="h-3.5 w-3.5" />
@@ -215,96 +220,32 @@ export function AwardsModalView() {
 }
 
 export default function AwardsMarquee() {
-  const scrollRef = useRef(null);
   const [activeCert, setActiveCert] = useState(null);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    let animationId;
-    let offset = 0;
-    const speed = 0.5; // px per frame
-
-    const step = () => {
-      offset += speed;
-      // reset when we've scrolled past the first set (half the total width)
-      const halfWidth = el.scrollWidth / 2;
-      if (offset >= halfWidth) offset = 0;
-      el.style.transform = `translateX(-${offset}px)`;
-      animationId = requestAnimationFrame(step);
-    };
-
-    animationId = requestAnimationFrame(step);
-
-    // pause on hover
-    const parent = el.parentElement;
-    const pause = () => cancelAnimationFrame(animationId);
-    const resume = () => {
-      animationId = requestAnimationFrame(step);
-    };
-
-    if (parent) {
-      parent.addEventListener("mouseenter", pause);
-      parent.addEventListener("mouseleave", resume);
-    }
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      if (parent) {
-        parent.removeEventListener("mouseenter", pause);
-        parent.removeEventListener("mouseleave", resume);
-      }
-    };
-  }, []);
-
-  // Quadruple items to ensure seamless loop even on wide screens
-  const doubled = [
-    ...certifications,
-    ...certifications,
-    ...certifications,
-    ...certifications,
-  ];
 
   return (
     <>
-      <div className="relative w-full overflow-hidden">
-        <div className="overflow-hidden">
-          <div
-            ref={scrollRef}
-            className="flex w-max gap-3 py-1"
-            style={{ willChange: "transform" }}
+      <div className="grid w-full min-w-0 grid-cols-[repeat(auto-fit,minmax(min(100%,120px),1fr))] gap-3">
+        {certifications.map((cert) => (
+          <button
+            key={cert.id}
+            type="button"
+            aria-label={"View " + (cert.shortName || cert.name) + " certificate from " + cert.issuer}
+            onClick={() => setActiveCert(cert)}
+            className="group relative flex min-w-0 flex-col items-center gap-2 rounded-2xl border border-white/15 bg-white/[0.06] p-3 text-left transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
           >
-            {doubled.map((cert, idx) => (
-              <button
-                key={`${cert.id}-${idx}`}
-                type="button"
-                onClick={() => setActiveCert(cert)}
-                className="group relative flex w-[155px] flex-col items-center justify-between gap-2 rounded-2xl border border-white/15 bg-white/[0.06] p-3 text-left transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.12]"
-              >
-                <div className="relative h-20 w-full overflow-hidden rounded-xl bg-black/20 p-1.5">
-                  <div className="relative h-full w-full">
-                    <Image
-                      src={cert.logo}
-                      alt={cert.alt}
-                      fill
-                      sizes="150px"
-                      className="object-contain opacity-85 transition duration-300 group-hover:scale-105 group-hover:opacity-100"
-                    />
-                  </div>
-                </div>
-                <div className="w-full min-w-0 text-center">
-                  <p className="truncate text-xs font-semibold text-white group-hover:text-sky-200">
-                    {cert.shortName || cert.name}
-                  </p>
-                  <p className="truncate text-[10px] font-medium uppercase tracking-wider text-white/55">
-                    {cert.issuer} • {cert.year}
-                  </p>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
+            <div className="flex h-20 w-full items-center justify-center rounded-xl bg-black/20 p-3">
+              <IssuerLogo cert={cert} className="h-12 w-12 transition-transform duration-300 group-hover:scale-110" />
+            </div>
+            <div className="w-full min-w-0 space-y-1 text-center">
+              <p className="break-words text-xs font-semibold text-white group-hover:text-sky-200">
+                {cert.shortName || cert.name}
+              </p>
+              <p className="text-[10px] font-medium uppercase tracking-wider text-white/55">
+                {cert.issuer} &bull; {cert.year}
+              </p>
+            </div>
+          </button>
+        ))}
       </div>
 
       <CardModal isOpen={!!activeCert} onClose={() => setActiveCert(null)}>

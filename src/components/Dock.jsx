@@ -27,7 +27,7 @@ export default function Dock() {
 
   return (
     <>
-      <div className="fixed right-6 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-4 rounded-[24px] border border-white/20 bg-white/12 px-4 py-5 shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl md:flex">
+      <div className="fixed right-6 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-4 rounded-[24px] border border-white/20 bg-white/12 px-4 py-5 shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl xl:flex">
         {items.map((item) =>
           item.preview ? (
             <button
@@ -56,8 +56,9 @@ export default function Dock() {
         )}
       </div>
 
-      <div className="fixed right-3 top-1/2 z-20 flex -translate-y-1/2 items-center gap-2 md:hidden">
+      <div className="fixed right-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-20 flex items-end gap-2 xl:hidden">
         <div
+          inert={!isOpen}
           className={`flex flex-col gap-3 rounded-[18px] border border-white/20 bg-white/12 px-3 py-3 shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl transition-all duration-200 ease-out ${
             isOpen ? "translate-x-0 opacity-100" : "translate-x-6 opacity-0 pointer-events-none"
           }`}
@@ -82,6 +83,7 @@ export default function Dock() {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={() => setIsOpen(false)}
                 className="group flex w-24 flex-col items-center gap-2 rounded-2xl px-3 py-3 text-center text-xs font-semibold text-white/80 transition duration-150 ease-out hover:-translate-y-1 hover:scale-105 hover:bg-white/10 hover:text-white"
               >
                 <span className="text-2xl drop-shadow-sm" aria-hidden="true">
