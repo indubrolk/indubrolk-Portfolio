@@ -227,7 +227,7 @@ export const Card = ({
         onClick={handleOpen}
         className="relative z-10 flex h-96 w-64 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 shadow-2xl md:h-[44rem] md:w-[28rem] dark:bg-neutral-900">
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+          className="pointer-events-none absolute inset-x-0 top-0 z-30 hidden h-full bg-gradient-to-b from-black/50 via-transparent to-transparent md:block" />
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
@@ -243,7 +243,7 @@ export const Card = ({
         <BlurImage
           src={card.src}
           alt={card.title}
-          className="absolute inset-0 z-10 object-cover" />
+          className="absolute inset-0 z-10 hidden object-cover md:block" />
       </motion.button>
     </>
   );

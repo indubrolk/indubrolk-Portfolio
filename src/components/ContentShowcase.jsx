@@ -67,7 +67,7 @@ export default function ContentShowcase({ videos = [], articles = [] }) {
                       href={video.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex flex-col gap-3 rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 via-white/6 to-white/4 backdrop-blur-xl p-5 text-left shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/25 hover:from-white/12"
+                      className="group flex flex-col gap-3 rounded-3xl border border-white/15 bg-white/[0.06] p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.1]"
                     >
                       <div className="flex items-start justify-between gap-1">
                         <div>
