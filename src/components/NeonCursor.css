@@ -21,10 +21,10 @@
   left: 0;
   width: 10px;
   height: 10px;
-  background-color:   #ffffff;
+  background-color: #ffffff;
   border-radius: 50%;
   pointer-events: none;
-  box-shadow: 0 0 10px #e8e7e7, 0 0 20px #fff;
+  /* box-shadow: 0 0 10px #e8e7e7, 0 0 20px #fff; */
   z-index: 100001;
 }
 
@@ -41,7 +41,7 @@
   box-sizing: border-box;
 }
 
-.cursor-glow {
+/* .cursor-glow {
   position: fixed;
   top: 0;
   left: 0;
@@ -51,4 +51,4 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
-}
+} */
