@@ -54,7 +54,7 @@ export default function NavigationDock({ items }) {
 
   return (
     <div
-      className="navigation-dock hidden items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xl md:flex"
+      className="navigation-dock relative isolate hidden items-center gap-3 rounded-full border border-white/10 px-5 py-2 md:flex"
       onPointerMove={(event) => {
         if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
         const bounds = event.currentTarget.getBoundingClientRect();
