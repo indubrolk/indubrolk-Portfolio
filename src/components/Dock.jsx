@@ -49,7 +49,7 @@ function DockItem({ item, index, pointer, focused, reduceMotion, active, onSelec
       onFocus={() => focused.set(index)}
       onBlur={() => focused.set(-1)}
       style={{ height, x: lift }}
-      className="relative flex w-24 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl px-3 text-center text-xs font-semibold text-white/80 transition-colors duration-150 hover:bg-white/10 hover:text-white focus-visible:bg-white/10 focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/80"
+      className="relative flex w-24 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl px-3 text-center text-xs font-semibold text-white/80 transition-colors duration-150 hover:bg-surface-hover hover:text-white focus-visible:bg-surface-hover focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/80"
     >
       <motion.span className="block shrink-0 text-white" style={{ width: iconSize, height: iconSize }} aria-hidden="true">
         <item.icon className="h-full w-full" />
@@ -103,14 +103,14 @@ export default function Dock() {
 
   return (
     <>
-      <div className="fixed right-6 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-4 rounded-[24px] border border-white/20 bg-white/12 px-4 py-5 shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl xl:flex">
+      <div className="fixed right-6 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-4 rounded-[24px] border border-white/10 bg-surface px-4 py-5 shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl xl:flex">
         <DockItems onSelect={(item) => { if (item.preview) setIsCVOpen(true); }} />
       </div>
 
       <div className="fixed right-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-20 flex items-end gap-2 xl:hidden">
         <div
           inert={!isOpen}
-          className={`flex flex-col gap-3 rounded-[18px] border border-white/20 bg-white/12 px-3 py-3 shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl transition-all duration-200 ease-out ${
+          className={`flex flex-col gap-3 rounded-[18px] border border-white/10 bg-surface px-3 py-3 shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl transition-all duration-200 ease-out ${
             isOpen ? "translate-x-0 opacity-100" : "translate-x-6 opacity-0 pointer-events-none"
           }`}
         >
@@ -126,7 +126,7 @@ export default function Dock() {
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/30 bg-white/20 text-white shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl transition duration-150 hover:scale-105 active:scale-95"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/30 bg-surface text-white shadow-[0_18px_60px_-22px_rgba(0,0,0,0.65)] backdrop-blur-2xl transition duration-150 hover:scale-105 active:scale-95"
           aria-label={isOpen ? "Close dock" : "Open dock"}
         >
           {isOpen ? <ChevronRight className="h-5 w-5" /> : <ChevronLeft className="h-5 w-5" />}

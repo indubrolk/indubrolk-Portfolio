@@ -59,7 +59,8 @@ export default function CVPreviewModal({ isOpen, onClose }) {
             href="/CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="cv-preview-btn cv-preview-btn-ghost"
+            className="cv-preview-btn"
+            aria-label="Open CV in new tab"
             title="Open in new tab"
           >
             <ExternalLink className="h-4 w-4" />
@@ -68,7 +69,8 @@ export default function CVPreviewModal({ isOpen, onClose }) {
           <a
             href="/CV.pdf"
             download="Indu-CV.pdf"
-            className="cv-preview-btn cv-preview-btn-primary"
+            className="cv-preview-btn"
+            aria-label="Download CV"
             title="Download CV"
           >
             <Download className="h-4 w-4" />

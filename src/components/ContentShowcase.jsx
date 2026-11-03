@@ -34,7 +34,7 @@ export default function ContentShowcase({ videos = [], articles = [] }) {
                 {/*                    <h3 className="text-sm font-semibold text-white">{article.title}</h3>*/}
                 {/*                    <p className="text-xs text-slate-200">{article.description}</p>*/}
                 {/*                </div>*/}
-                {/*                <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] text-white/75 transition group-hover:border-white/25 group-hover:text-white">*/}
+                {/*                <span className="rounded-full border border-white/10 bg-surface-muted px-2 py-1 text-[11px] text-white/75 transition group-hover:border-white/25 group-hover:text-white">*/}
                 {/*          {article.tag || "Read"}*/}
                 {/*        </span>*/}
                 {/*            </div>*/}
@@ -46,7 +46,7 @@ export default function ContentShowcase({ videos = [], articles = [] }) {
                 {/*</div>*/}
             </div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-            <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">
+            <span className="rounded-full border border-white/10 bg-surface-muted px-2 py-1">
               Content
             </span>
             <span className="text-white/50">Videos & Articles</span>
@@ -67,14 +67,14 @@ export default function ContentShowcase({ videos = [], articles = [] }) {
                       href={video.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex flex-col gap-3 rounded-3xl border border-white/15 bg-white/[0.06] p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.1]"
+                      className="group flex flex-col gap-3 rounded-3xl border border-white/10 bg-surface-muted p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-surface-hover"
                     >
                       <div className="flex items-start justify-between gap-1">
                         <div>
                           <h3 className="text-sm font-semibold text-white">{video.title}</h3>
                           <p className="text-xs text-slate-200">{video.description}</p>
                         </div>
-                        <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] text-white/75 transition group-hover:border-white/25 group-hover:text-white">
+                        <span className="rounded-full border border-white/10 bg-surface-muted px-2 py-1 text-[11px] text-white/75 transition group-hover:border-white/25 group-hover:text-white">
                           Watch
                         </span>
                       </div>

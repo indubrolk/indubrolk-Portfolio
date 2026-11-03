@@ -16,7 +16,7 @@ export function Preloader({ children }) {
   if (done) return children;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-950">
+    <div className="flex min-h-screen items-center justify-center bg-background">
       <Terminal>
         <TypingAnimation>&gt; npm get indubrolk@latest init</TypingAnimation>
 
