@@ -104,7 +104,7 @@ function TechStackDockItem({ item, pointer, reduceMotion }) {
         style={reduceMotion ? undefined : { scale, y: lift }}
         className="flex h-14 w-14 items-center justify-center"
       >
-        {item.iconName ? <StackIcon name={item.iconName} className="h-10 w-10" /> : <item.Icon />}
+        {item.iconName ? <StackIcon name={item.iconName} variant="dark" className="h-10 w-10" /> : <item.Icon />}
       </motion.span>
       <span className="text-xs font-medium leading-4 text-white/70 transition-colors group-hover:text-white group-focus-visible:text-white">
         {item.name}

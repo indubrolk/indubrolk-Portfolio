@@ -46,16 +46,16 @@ export default function ContentPage() {
     <div className="relative min-h-screen overflow-hidden text-slate-50">
       <div className="pointer-events-none absolute inset-0 opacity-70">
         <div className="desktops-grid absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sky-950/10 via-transparent to-black/50" />
       </div>
 
       <nav className="fixed inset-x-0 top-0 z-20 mx-auto flex max-w-5xl items-center justify-center gap-4 px-6 pt-6">
-        <div className="flex items-center gap-3 rounded-full border border-white/20 bg-white/12 px-5 py-3 backdrop-blur-xl shadow-lg shadow-black/20">
+        <div className="flex items-center gap-3 rounded-full border border-white/10 bg-surface px-5 py-3 backdrop-blur-xl shadow-lg shadow-black/20">
           {menuIcons.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold text-white/80 transition hover:-translate-y-0.5 hover:bg-white/20 hover:text-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold text-white/80 transition hover:-translate-y-0.5 hover:bg-surface-hover hover:text-white"
               aria-label={item.label}
             >
               <item.icon className="h-6 w-6" />

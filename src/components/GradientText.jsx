@@ -1,7 +1,7 @@
 export default function GradientText({
   children,
   className = '',
-  colors = ['#ffaa40', '#9c40ff', '#ffaa40'],
+  colors = ['#94a3b8', '#7dd3fc', '#94a3b8'],
   animationSpeed = 8,
   showBorder = false
 }) {

@@ -87,14 +87,14 @@ export function CertificateViewerContent({ cert, onBack }) {
           href={cert.certificateImage}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white/90 transition hover:border-white/30 hover:bg-white/20"
+          className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-surface-muted px-3.5 py-1.5 text-xs font-semibold text-white/90 transition hover:border-white/30 hover:bg-surface-hover"
         >
           <ExternalLink className="h-3.5 w-3.5" />
           <span>Open Full Image</span>
         </a>
       </div>
 
-      <div className="relative mx-auto flex h-[50vh] max-h-[520px] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-black/40 p-4">
+      <div className="relative mx-auto flex h-[50vh] max-h-[520px] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4">
         <div className="relative h-full w-full">
           <Image
             src={cert.certificateImage}
@@ -134,7 +134,7 @@ export function AwardsModalView() {
       <div className="flex flex-col gap-4 border-b border-white/10 pb-4 pr-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-            <span className="rounded-full border border-white/15 bg-white/10 px-2.5 py-1">
+            <span className="rounded-full border border-white/10 bg-surface-muted px-2.5 py-1">
               Awards
             </span>
             <span className="text-white/50">&amp; Certifications</span>
@@ -152,7 +152,7 @@ export function AwardsModalView() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Look for certificate..."
-            className="w-full rounded-full border border-white/15 bg-white/10 py-2 pl-9 pr-8 text-sm text-white placeholder-white/40 transition focus:border-white/35 focus:bg-white/15 focus:outline-none"
+            className="w-full rounded-full border border-white/10 bg-surface-muted py-2 pl-9 pr-8 text-sm text-white placeholder-white/40 transition focus:border-white/35 focus:bg-surface-hover focus:outline-none"
           />
           {searchQuery && (
             <button
@@ -168,7 +168,7 @@ export function AwardsModalView() {
       </div>
 
       {filteredCerts.length === 0 ? (
-        <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 py-12 text-center">
+        <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-surface-muted py-12 text-center">
           <Award className="mb-2 h-8 w-8 text-white/40" />
           <p className="text-sm font-medium text-white/80">
             No matching certificates found
@@ -184,7 +184,7 @@ export function AwardsModalView() {
               key={cert.id}
               type="button"
               onClick={() => setSelectedCert(cert)}
-              className="group flex flex-col gap-3 rounded-2xl border border-white/15 bg-white/[0.06] p-4 text-left transition hover:-translate-y-1 hover:border-white/30 hover:bg-white/[0.12]"
+              className="group flex flex-col gap-3 rounded-2xl border border-white/10 bg-surface-muted p-4 text-left transition hover:-translate-y-1 hover:border-white/30 hover:bg-surface-hover"
             >
               <div className="relative flex h-40 w-full items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/30 p-4">
                 <IssuerLogo cert={cert} className="h-20 w-20 transition-transform duration-300 group-hover:scale-105" />
@@ -207,7 +207,7 @@ export function AwardsModalView() {
                     {cert.name}
                   </h4>
                 </div>
-                <span className="shrink-0 rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[11px] font-medium text-white/80 transition group-hover:border-white/30 group-hover:bg-white/20 group-hover:text-white">
+                <span className="shrink-0 rounded-full border border-white/10 bg-surface-muted px-2.5 py-1 text-[11px] font-medium text-white/80 transition group-hover:border-white/30 group-hover:bg-surface-hover group-hover:text-white">
                   View
                 </span>
               </div>
@@ -231,7 +231,7 @@ export default function AwardsMarquee() {
             type="button"
             aria-label={"View " + (cert.shortName || cert.name) + " certificate from " + cert.issuer}
             onClick={() => setActiveCert(cert)}
-            className="group relative flex min-w-0 flex-col items-center gap-2 rounded-2xl border border-white/15 bg-white/[0.06] p-3 text-left transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+            className="group relative flex min-w-0 flex-col items-center gap-2 rounded-2xl border border-white/10 bg-surface-muted p-3 text-left transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-surface-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
           >
             <div className="flex h-20 w-full items-center justify-center rounded-xl bg-black/20 p-3">
               <IssuerLogo cert={cert} className="h-12 w-12 transition-transform duration-300 group-hover:scale-110" />

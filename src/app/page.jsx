@@ -54,6 +54,23 @@ const projects = [
     link: "https://github.com/indubrolk/Simple-ML-chatbot#",
     image: "/arti3.jpg",
   },
+  {
+    title: "Hike Ceylon",
+    description:
+      "Hiking support application for Sri Lanka",
+    tech: "Flutter / .net / Dart",
+    link: "https://github.com/indubrolk/hikeceylon",
+    image: "/HikeCeylon.png",
+  },
+  {
+    title: "EstateTrack",
+    description:
+      "Digital Attendance and Wage Management System for Tea Plantation Line Workers",
+    tech: "Flutter / .net / Dart",
+    link: " https://github.com/indubrolk/EstateTrack",
+    image: "/EstateTrack1.png",
+  },
+
 ];
 
 const galleryItems = [
@@ -61,25 +78,25 @@ const galleryItems = [
     title: "UI Shots",
     description: "Selected screens from recent dashboard and landing page explorations.",
     tag: "Web",
-    accent: "from-sky-400/25 via-blue-500/15 to-indigo-500/10",
+    accent: "from-sky-500/10 via-slate-900/60 to-slate-950/80",
   },
   {
     title: "Brand Frames",
     description: "Hero banners, thumbnails, and cover art crafted for my content work.",
     tag: "Branding",
-    accent: "from-orange-400/25 via-amber-400/15 to-pink-500/10",
+    accent: "from-blue-500/10 via-slate-900/60 to-slate-950/80",
   },
   {
     title: "Hardware Lab",
     description: "Photos of micro:bit sessions, IoT builds, and maker experiments.",
     tag: "Maker",
-    accent: "from-emerald-400/25 via-teal-400/15 to-sky-400/10",
+    accent: "from-teal-500/10 via-slate-900/60 to-slate-950/80",
   },
   {
     title: "Motion & Media",
     description: "Short reels, motion studies, and behind-the-scenes captures.",
     tag: "Content",
-    accent: "from-fuchsia-400/25 via-purple-500/15 to-slate-800/60",
+    accent: "from-indigo-500/10 via-slate-900/60 to-slate-950/80",
   },
 ];
 const quickLinks = [
@@ -144,7 +161,7 @@ export default function HomePage() {
     <div className="relative min-h-screen w-full max-w-[100vw] overflow-x-hidden overflow-y-auto text-slate-50">
       <div className="pointer-events-none absolute inset-0 opacity-70">
         <div className="desktops-grid absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sky-950/10 via-transparent to-black/50" />
       </div>
 
       <nav className="fixed inset-x-0 top-0 z-20 px-4 pt-6 md:pt-14">
@@ -152,9 +169,9 @@ export default function HomePage() {
           <div className="flex items-center gap-3">
             {/* <a
               href="#home"
-              className="flex backdrop-blur-xl items-center gap-3 h-15 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/10"
+              className="flex backdrop-blur-xl items-center gap-3 h-15 rounded-full border border-white/10 bg-surface-muted px-3 py-1.5 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:bg-surface-hover"
             > */}
-            {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl bg-white/5"> */}
+            {/* <span className="relative h-10 w-10 overflow-hidden rounded-2xl bg-surface-muted"> */}
             <motion.a
               href="#home"
               aria-label="Back to home"
@@ -197,7 +214,7 @@ export default function HomePage() {
           {isMenuOpen && (
             <div
               id="mobile-nav"
-              className="rounded-3xl border border-white/15 bg-black/60 px-4 py-3 backdrop-blur-xl shadow-xl shadow-black/30 md:hidden"
+              className="rounded-3xl border border-white/10 bg-black/60 px-4 py-3 backdrop-blur-xl shadow-xl shadow-black/30 md:hidden"
             >
               <div className="flex flex-col divide-y divide-white/10">
                 {menuIcons.map((item) => (
@@ -229,7 +246,7 @@ export default function HomePage() {
               href={item.href}
               className="group flex flex-col items-center gap-2 text-sm font-semibold text-white/90"
             >
-              <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/12 bg-white/8 text-base shadow-inner shadow-white/5 transition group-hover:-translate-y-1 group-hover:border-white/30 group-hover:bg-white/14">
+              <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/12 bg-surface-muted text-base shadow-inner shadow-white/5 transition group-hover:-translate-y-1 group-hover:border-white/30 group-hover:bg-surface-hover">
                 <item.icon className="h-6 w-6" />
               </span>
               <span className="text-xs uppercase tracking-wide text-white/70 group-hover:text-white">
@@ -251,7 +268,7 @@ export default function HomePage() {
                     Induwara Jayakody
                   </span>{" "} */}
                   <WordRotate
-                    className="bg-gradient-to-r from-orange-100 via-orange-300 to-orange-600 bg-clip-text text-transparent"
+                    className="bg-gradient-to-r from-slate-100 via-sky-200 to-sky-400 bg-clip-text text-transparent"
                     words={[
                       "Induwara Jayakody",
                       "indu brolk",
@@ -268,7 +285,7 @@ export default function HomePage() {
                   {["Next.js", "React", "Tailwind", "UI/UX", "Electronics"].map((chip) => (
                     <span
                       key={chip}
-                      className="rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-medium text-slate-100"
+                      className="rounded-full border border-white/10 bg-surface-muted px-3 py-1 text-xs font-medium text-slate-100"
                     >
                       {chip}
                     </span>
@@ -292,7 +309,7 @@ export default function HomePage() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="group rounded-2xl border border-white/10 bg-white/6 px-4 py-3 text-sm font-semibold text-white/90 shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/30 hover:bg-white/10"
+                    className="group rounded-2xl border border-white/10 bg-surface-muted px-4 py-3 text-sm font-semibold text-white/90 shadow-inner shadow-white/5 transition hover:-translate-y-1 hover:border-white/30 hover:bg-surface-hover"
                   >
                     <div className="flex items-center justify-between">
                       <span>{link.label}</span>
@@ -307,7 +324,7 @@ export default function HomePage() {
           <DesktopWindow scrollFade id="about">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">About</span>
+                <span className="rounded-full border border-white/10 bg-surface-muted px-2 py-1">About</span>
                 <span className="text-white/50">Overview</span>
               </div>
               <p className="text-sm text-slate-200">
@@ -315,28 +332,28 @@ export default function HomePage() {
                 I enjoy collaborating with teams, sketching interfaces, and building dependable experiences.
               </p>
               <div className="grid grid-cols-2 gap-3 text-sm text-slate-200">
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 px-4 py-4" data-card>
+                <div className="relative rounded-2xl border border-white/10 bg-surface-muted px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Role</p>
                   <WordRotate
                     words={["Developer", "Designer", "Content Creator"]}
                     className="font-semibold text-white"
                   />
                 </div>
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 px-4 py-4" data-card>
+                <div className="relative rounded-2xl border border-white/10 bg-surface-muted px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Location</p>
                   <WordRotate
                     words={["Kurunegala", "Sri Lanka", "Remote-friendly"]}
                     className="font-semibold text-white"
                   />
                 </div>
-                <div className="relative rounded-2xl border border-white/15 bg-white/10 px-4 py-4" data-card>
+                <div className="relative rounded-2xl border border-white/10 bg-surface-muted px-4 py-4" data-card>
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Focus</p>
                   <WordRotate
                     words={["Web Apps", "UI Systems", "Product Design", "Graphic Design", "Full-Stack Development", "Cloud Technologies", "Machine Learning"]}
                     className="font-semibold text-white"
                   />
                 </div>
-                {/* <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-3">
+                {/* <div className="rounded-xl border border-white/10 bg-surface-muted px-3 py-3">
                   <p className="text-[11px] uppercase tracking-wide text-white/60">Stack</p>
                   <p className="font-semibold text-white">Next.js, React, Tailwind</p>
                 </div> */}
@@ -349,7 +366,7 @@ export default function HomePage() {
           <DesktopWindow scrollFade>
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Tech</span>
+                <span className="rounded-full border border-white/10 bg-surface-muted px-2 py-1">Tech</span>
                 <span className="text-white/50">Stack</span>
               </div>
               <TechStackDock />
@@ -383,10 +400,10 @@ export default function HomePage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex min-w-0 w-full max-w-full overflow-hidden flex-col gap-4 rounded-3xl border border-white/15 bg-white/[0.06] p-3 sm:p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.1]"
+                      className="group flex min-w-0 w-full max-w-full overflow-hidden flex-col gap-4 rounded-3xl border border-white/10 bg-surface-muted p-3 sm:p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-surface-hover"
                     >
                       {project.image && (
-                        <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-2xl bg-white/5 sm:aspect-auto sm:h-48">
+                        <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-2xl bg-surface-muted sm:aspect-auto sm:h-48">
                           <Image
                             src={project.image}
                             alt={project.title}
@@ -402,7 +419,7 @@ export default function HomePage() {
                             <h3 className="text-base font-semibold text-white break-words">{project.title}</h3>
                             <p className="text-sm text-slate-300 mt-1 break-words sm:line-clamp-2">{project.description}</p>
                           </div>
-                          <span className="shrink-0 rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] text-white/80">
+                          <span className="shrink-0 rounded-full border border-white/10 bg-surface-muted px-2 py-1 text-[11px] text-white/80">
                             Open
                           </span>
                         </div>
@@ -419,14 +436,14 @@ export default function HomePage() {
                 {galleryItems.map((item) => (
                   <ExpandableCard
                     key={item.title}
-                    className={`group flex flex-col gap-3 rounded-3xl border border-white/15 bg-gradient-to-br ${item.accent} p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:from-white/20`}
+                    className={`group flex flex-col gap-3 rounded-3xl border border-white/10 bg-gradient-to-br ${item.accent} p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:from-sky-500/15`}
                   >
                     <div className="flex items-start justify-between gap-3 min-w-0">
                       <div className="min-w-0">
                         <h3 className="text-base font-semibold text-white break-words">{item.title}</h3>
                         <p className="text-sm text-slate-200 break-words sm:line-clamp-2">{item.description}</p>
                       </div>
-                      <span className="shrink-0 rounded-full border border-white/20 bg-white/15 px-2 py-1 text-[11px] text-white/80">
+                      <span className="shrink-0 rounded-full border border-white/10 bg-surface-muted px-2 py-1 text-[11px] text-white/80">
                         {item.tag}
                       </span>
                     </div>
@@ -441,7 +458,7 @@ export default function HomePage() {
             <DesktopWindow scrollFade id="contact">
               <div className="space-y-3">
                 <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                  <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Contact</span>
+                  <span className="rounded-full border border-white/10 bg-surface-muted px-2 py-1">Contact</span>
                   <span className="text-white/50">Reach Out</span>
                 </div>
                 <p className="text-sm text-slate-200">
@@ -454,10 +471,10 @@ export default function HomePage() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex min-w-0 w-full max-w-full items-center justify-between gap-2 rounded-2xl border border-white/15 bg-white/[0.08] px-3 py-3 sm:px-4 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.14]"
+                        className="group flex min-w-0 w-full max-w-full items-center justify-between gap-2 rounded-2xl border border-white/10 bg-surface-muted px-3 py-3 sm:px-4 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-surface-hover"
                       >
                         <div className="flex flex-1 items-center gap-2 sm:gap-3 text-left min-w-0">
-                          <span className="shrink-0 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white">
+                          <span className="shrink-0 flex h-8 w-8 items-center justify-center rounded-lg bg-surface-muted text-white">
                             <item.icon className="h-4 w-4" />
                           </span>
                           <div className="min-w-0">
@@ -476,7 +493,7 @@ export default function HomePage() {
             <DesktopWindow scrollFade id="certifications" modalContent={<AwardsModalView />}>
               <div className="space-y-3 overflow-hidden">
                 <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                  <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Awards</span>
+                  <span className="rounded-full border border-white/10 bg-surface-muted px-2 py-1">Awards</span>
                   <span className="text-white/50">& Certs</span>
                 </div>
                 <AwardsMarquee />
@@ -489,10 +506,10 @@ export default function HomePage() {
       <Footer />
 
       {/*      <footer className="relative z-10 mx-auto mt-6 flex max-w-6xl flex-col items-center gap-3 px-6 pb-24 text-center text-sm text-white/70">*/}
-      {/*        <div className="h-px w-full max-w-4xl bg-white/10" />*/}
+      {/*        <div className="h-px w-full max-w-4xl bg-surface-muted" />*/}
       {/*        <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.25em]">*/}
       {/*        <GradientText*/}
-      {/*  colors={["#fd690c", "#d35101", "#ff893a", "#fdc19b"]}*/}
+      {/*  colors={["#94a3b8", "#7dd3fc", "#38bdf8", "#cbd5e1"]}*/}
       {/*  animationSpeed={1}*/}
       {/*  showBorder={false}*/}
       {/*  className="custom-class"*/}
