@@ -60,8 +60,17 @@ const projects = [
       "Hiking support application for Sri Lanka",
     tech: "Flutter / .net / Dart",
     link: "https://github.com/indubrolk/hikeceylon",
-    image: "/arti3.jpg",
+    image: "/HikeCeylon.png",
   },
+  {
+    title: "EstateTrack",
+    description:
+      "Digital Attendance and Wage Management System for Tea Plantation Line Workers",
+    tech: "Flutter / .net / Dart",
+    link: " https://github.com/indubrolk/EstateTrack",
+    image: "/EstateTrack1.png",
+  },
+
 ];
 
 const galleryItems = [
