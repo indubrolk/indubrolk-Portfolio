@@ -11,7 +11,7 @@ import ExpandableCard from "../components/ExpandableCard";
 import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
 import Footer from "@/components/Footer";
-import TechStackMarquee from "@/components/TechStackMarquee";
+import TechStackDock from "@/components/TechStackDock";
 import AwardsMarquee, { AwardsModalView } from "@/components/AwardsMarquee";
 
 const menuIcons = [
@@ -352,7 +352,7 @@ export default function HomePage() {
                 <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">Tech</span>
                 <span className="text-white/50">Stack</span>
               </div>
-              <TechStackMarquee />
+              <TechStackDock />
             </div>
           </DesktopWindow>
         </div>

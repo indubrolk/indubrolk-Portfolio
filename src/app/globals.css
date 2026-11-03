@@ -44,6 +44,8 @@
 }
 
 html {
+  /* Motion measures scroll animation targets relative to the root container. */
+  position: relative;
   scroll-behavior: smooth;
 }
 
