@@ -16,8 +16,8 @@ export function Preloader({ children }) {
   if (done) return children;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <Terminal>
+    <div className="flex min-h-screen items-center justify-center bg-background px-6 sm:px-0">
+      <Terminal className="min-w-0">
         <TypingAnimation>&gt; npm get indubrolk@latest init</TypingAnimation>
 
         {/* <AnimatedSpan className="text-green-500">
