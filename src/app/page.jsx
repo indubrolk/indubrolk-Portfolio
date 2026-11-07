@@ -8,6 +8,7 @@ import DesktopWindow from "../components/DesktopWindow";
 import Dock from "../components/Dock";
 import NavigationDock from "../components/NavigationDock";
 import ExpandableCard from "../components/ExpandableCard";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { WordRotate } from "@/components/ui/word-rotate";
 import GradientText from "@/components/GradientText";
 import Footer from "@/components/Footer";
@@ -47,12 +48,12 @@ const projects = [
     image: "/unilink.png",
   },
   {
-    title: "Simple ML Chat Bot",
+    title: "SignIt",
     description:
-      "Simple chat-bot using python",
-    tech: "Python / Machine Learning ",
-    link: "https://github.com/indubrolk/Simple-ML-chatbot#",
-    image: "/arti3.jpg",
+      "PDF digital signature adder",
+    tech: "Python / Django ",
+    link: "https://github.com/indubrolk/SignIt",
+    image: "/signit1.png",
   },
   {
     title: "Hike Ceylon",
@@ -156,6 +157,16 @@ export default function HomePage() {
   const logoOpacity = useTransform(scrollY, [24, 180], [1, 0]);
   const logoY = useTransform(scrollY, [24, 180], [0, -16]);
   const logoVisibility = useTransform(scrollY, (value) => value >= 180 ? "hidden" : "visible");
+  // The page mounts after the preloader exits, so these delays start at the reveal.
+  const landingEntrance = (delay = 0, y = 20) => ({
+    initial: reduceMotion ? false : { opacity: 0, y },
+    animate: { opacity: 1, y: 0 },
+    transition: {
+      duration: reduceMotion ? 0 : 0.8,
+      delay: reduceMotion ? 0 : delay,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  });
 
   return (
     <div className="relative min-h-screen w-full max-w-[100vw] overflow-x-hidden overflow-y-auto text-slate-50">
@@ -164,7 +175,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-sky-950/10 via-transparent to-black/50" />
       </div>
 
-      <nav className="fixed inset-x-0 top-0 z-20 px-4 pt-6 md:pt-14">
+      <motion.nav {...landingEntrance(0.05, -16)} className="fixed inset-x-0 top-0 z-20 px-4 pt-6 md:pt-14">
         <div className="mx-auto flex max-w-5xl flex-col gap-3">
           <div className="flex items-center gap-3">
             {/* <a
@@ -235,7 +246,7 @@ export default function HomePage() {
             </div>
           )}
         </div>
-      </nav>
+      </motion.nav>
 
       <main id="home" className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-28 pb-32 md:pt-40">
 
@@ -260,10 +271,10 @@ export default function HomePage() {
           <DesktopWindow scrollFade>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-2">
-                <p className="text-xl font-mono uppercase tracking-[0.35em] text-slate-300">
+                <motion.p {...landingEntrance(0.12)} className="text-xl font-mono uppercase tracking-[0.35em] text-slate-300">
                   Hi, I&apos;m
-                </p>
-                <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                </motion.p>
+                <motion.h1 {...landingEntrance(0.22)} className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                   {/* <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-fuchsia-400 bg-clip-text text-transparent">
                     Induwara Jayakody
                   </span>{" "} */}
@@ -277,11 +288,11 @@ export default function HomePage() {
                       "FullStack Developer",
                     ]}
                   />
-                </h1>
-                <p className="max-w-2xl text-sm text-slate-200 sm:text-base">
+                </motion.h1>
+                <motion.p {...landingEntrance(0.32)} className="max-w-2xl text-sm text-slate-200 sm:text-base">
                   Hello! I' m Chamod Induwara, a passionate tech enthusiast, YouTuber, Tech Article Writer and IT undergraduate at the Sabaragamuwa University of Sri Lanka. I enjoy exploring the latest in technology and sharing insights through my YouTube channel and engaging tech articles. Whether it's diving into software, gadgets, or creative tech solutions, Im dedicated to making tech accessible and enjoyable for everyone. Join me on my journey as I explore, learn, and share everything tech from the heart of Sri Lanka!
-                </p>
-                <div className="flex flex-wrap gap-2 pt-2">
+                </motion.p>
+                <motion.div {...landingEntrance(0.42)} className="flex flex-wrap gap-2 pt-2">
                   {["Next.js", "React", "Tailwind", "UI/UX", "Electronics"].map((chip) => (
                     <span
                       key={chip}
@@ -290,10 +301,10 @@ export default function HomePage() {
                       {chip}
                     </span>
                   ))}
-                </div>
+                </motion.div>
               </div>
 
-              <div className="relative mx-auto h-64 w-64 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-[400px] lg:w-[400px] shrink-0 overflow-hidden">
+              <motion.div {...landingEntrance(0.24, 28)} className="relative mx-auto h-64 w-64 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-[400px] lg:w-[400px] shrink-0 overflow-hidden">
                 <Image
                   src="/profile pic2.png"
                   alt="Induwara Jayakody"
@@ -302,7 +313,7 @@ export default function HomePage() {
                   className="object-cover"
                   priority
                 />
-              </div>
+              </motion.div>
 
               {/* <div className="grid gap-3 sm:grid-cols-3">
                 {quickLinks.map((link) => (
@@ -395,40 +406,45 @@ export default function HomePage() {
             {activeTab === "projects" ? (
               <div className="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
                 {projects.map((project) => (
-                  <ExpandableCard key={project.title}>
-                    <a
+                  <CardContainer
+                    key={project.title}
+                    containerClassName="group/project min-w-0 w-full py-0"
+                    className="h-full min-w-0 w-full"
+                  >
+                    <CardBody
+                      as="a"
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex min-w-0 w-full max-w-full overflow-hidden flex-col gap-4 rounded-3xl border border-white/10 bg-surface-muted p-3 sm:p-5 text-left transition hover:-translate-y-1 hover:border-white/25 hover:bg-surface-hover"
+                      className="flex h-full min-w-0 w-full max-w-full flex-col gap-4 rounded-3xl border border-white/10 bg-surface-muted p-3 sm:p-5 text-left transition-colors duration-300 hover:border-sky-300/40 hover:bg-surface-hover hover:shadow-[0_20px_50px_-20px_rgba(56,189,248,0.3)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300"
                     >
                       {project.image && (
-                        <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-2xl bg-surface-muted sm:aspect-auto sm:h-48">
+                        <CardItem translateZ={70} className="relative aspect-video w-full shrink-0 overflow-hidden rounded-2xl bg-surface-muted sm:aspect-auto sm:h-48">
                           <Image
                             src={project.image}
                             alt={project.title}
                             fill
                             sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 360px"
-                            className="object-cover transition duration-500 group-hover:scale-105"
+                            className="object-cover"
                           />
-                        </div>
+                        </CardItem>
                       )}
-                      <div className="flex flex-col gap-2 w-full min-w-0">
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="min-w-0">
-                            <h3 className="text-base font-semibold text-white break-words">{project.title}</h3>
-                            <p className="text-sm text-slate-300 mt-1 break-words sm:line-clamp-2">{project.description}</p>
-                          </div>
-                          <span className="shrink-0 rounded-full border border-white/10 bg-surface-muted px-2 py-1 text-[11px] text-white/80">
-                            Open
-                          </span>
-                        </div>
-                        <p className="text-[12px] font-medium uppercase tracking-wide text-sky-200/90 mt-1 break-words">
+                      <CardItem as="h3" translateZ={45} className="w-full text-base font-semibold text-white break-words">
+                        {project.title}
+                      </CardItem>
+                      <CardItem as="p" translateZ={30} className="w-full text-sm text-slate-300 break-words sm:line-clamp-2">
+                        {project.description}
+                      </CardItem>
+                      <div className="mt-auto flex w-full min-w-0 items-center justify-between gap-3">
+                        <CardItem as="p" translateZ={25} className="min-w-0 text-[12px] font-medium uppercase tracking-wide text-sky-200/90 break-words">
                           {project.tech}
-                        </p>
+                        </CardItem>
+                        <CardItem as="span" translateZ={55} className="flex shrink-0 items-center gap-1 rounded-full border border-white/10 bg-surface-muted px-3 py-1.5 text-[11px] text-white/80 group-hover/project:border-sky-300/40 group-hover/project:text-sky-200">
+                          Open <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                        </CardItem>
                       </div>
-                    </a>
-                  </ExpandableCard>
+                    </CardBody>
+                  </CardContainer>
                 ))}
               </div>
             ) : (
